@@ -1,0 +1,90 @@
+IF
+    See([PC])
+	Global("ishfalteritalk","GLOBAL",0)
+	NumTimesTalkedTo(0)
+THEN
+    RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+See(NearestEnemyof(Myself))
+Global("falteriport","GLOBAL",0)
+THEN RESPONSE #100
+ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+ReallyForceSpell(Myself,WIZARD_WEB)
+ReallyForceSpell(Myself,WIZARD_SPIDER_SPAWN)
+ReallyForceSpell(Myself,WIZARD_SPIDER_SPAWN)
+DisplayStringHead(Myself,~Ha ha ha ha ha!~)
+JumpToPoint([3297.2515])
+SetGlobal("falteriport","GLOBAL",1)
+END 
+
+IF 
+See([PC])
+Global("falteriport","GLOBAL",1)
+THEN RESPONSE #100
+DisplayStringHead(Myself,~Fool girl, you could never emulate the power of Argath!~)
+SetGlobal("falteriport","GLOBAL",3)
+END
+
+IF
+See(NearestEnemyof(Myself))
+HaveSpell(WIZARD_HASTE)
+!Global("falterifast","GLOBAL",2)
+THEN RESPONSE #100
+Spell(Myself,WIZARD_HASTE)
+ReallyForceSpell(Myself,WIZARD_SPIDER_SPAWN)
+IncrementGlobal("falterifast","GLOBAL",1)
+END 
+
+IF
+See(NearestEnemyof(Myself))
+Range(LastSeenBy(Myself),5)
+Global("falterisurprise","GLOBAL",0)
+THEN RESPONSE #100 
+ReallyForceSpell(NearestEnemyof(Myself),WIZARD_CONFUSION)
+ReallyForceSpell(NearestEnemyof(Myself),WIZARD_HOLD_PERSON)
+ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+SetGlobal("falterisurprise","GLOBAL",1)
+END 
+
+
+IF
+See(NearestEnemyof(Myself))
+HaveSpell(WIZARD_GLITTERDUST)
+Global("ishsodwhodat","GLOBAL",0)
+THEN RESPONSE #100
+Spell(NearestEnemyof(Myself),WIZARD_GLITTERDUST)
+ReallyForceSpell(Myself,WIZARD_SPIDER_SPAWN)
+DisplayStringHead(Myself,~I will crush you like I crushed his brothers in arms!~)
+SetGlobal("ishsodwhodat","GLOBAL",1)
+END 
+
+IF 
+See([GOODCUTOFF.0.0.FIGHTER_ALL])
+HaveSpell(WIZARD_RAY_OF_ENFEEBLEMENT)
+THEN RESPONSE #100
+Spell(NearestEnemyof(Myself),WIZARD_RAY_OF_ENFEEBLEMENT)
+END 
+
+IF
+See(NearestEnemyof(Myself))
+HaveSpell(WIZARD_CHROMATIC_ORB)
+THEN RESPONSE #100
+Spell(NearestEnemyof(Myself),WIZARD_CHROMATIC_ORB)
+END 
+
+
+IF
+See(NearestEnemyof(Myself))
+HaveSpell(WIZARD_HASTE)
+Global("falterifast","GLOBAL",1)
+THEN RESPONSE #100
+Spell(Myself,WIZARD_HASTE)
+ReallyForceSpell(NearestEnemyof(Myself),WIZARD_CONFUSION)
+ReallyForceSpell(Myself,WIZARD_SPIDER_SPAWN)
+SetGlobal("falterifast","GLOBAL",2)
+END 
+

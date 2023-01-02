@@ -1,0 +1,455 @@
+IF 
+Dead("Tarnesh")
+See([PC])
+InParty("Myself")
+Global("Ishtarnesh","GLOBAL",0)
+THEN RESPONSE #100
+SetGlobal("Ishtarnesh","GLOBAL",1)
+END
+
+IF 
+Global("endofbg1","GLOBAL",1)
+InParty("Myself")
+Global("IshyFistHelp","GLOBAL",0)
+Global("Chapter","GLOBAL",7)
+THEN RESPONSE #100
+LeaveParty()
+MoveBetweenAreas("BD0010",[1069.533],7)
+SetGlobal("IshyFistHelp","GLOBAL",1)
+END
+
+
+IF
+Global("Ishtarnesh","GLOBAL",1)
+THEN RESPONSE #100 
+StartDialogueNoSet(Player1)
+END 
+
+IF
+InParty("Myself")
+LevelGT(Player1,4)
+LevelLT(Myself,4)
+THEN RESPONSE #100
+AddXPObject("#Ishy",7000) 
+END
+
+IF
+Global("P!ishbandits","AR1900",0)
+InParty("Myself")
+THEN RESPONSE # 100
+StartDialogueNoSet(Player1)
+SetGlobal("P!ishbandits","AR1900",1)
+END
+
+IF
+Global("P!ishcandlekeep","AR2626",0)
+InParty("Myself")
+Global("Chapter","GLOBAL",6)
+THEN RESPONSE # 100
+StartDialogueNoSet(Player1)
+SetGlobal("P!ishcandlekeep","AR2626",1)
+END
+
+
+// Chapter initiated dialogue for 3
+
+IF
+InParty(Myself)
+See(Player1)
+Global("ishnewna","GLOBAL",0)
+CombatCounter(0)
+Dead("Mulahey")
+Global("Chapter","GLOBAL",3)
+!Global("endofbg1","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("ishnewna","GLOBAL",1)
+StartDialogueNoSet(Player1)
+Continue()
+END
+
+////////////////////////////////////
+//////////////journal entries////////
+//////////////////////////////////
+
+IF
+Global("IshyQuest","GLOBAL",2)
+See([PC])
+Global("thehuntbegins","GLOBAL",0)
+!Global("endofbg1","GLOBAL",1)
+THEN RESPONSE #100
+SetGlobal("thehuntbegins","GLOBAL",1)
+AddJournalEntry(~Mage Huntress Extraordinaire
+
+Ishlilka has told me her real reason for coming here was to hunt down a rogue mage known as Juleska, who escaped capture by her father's mercenaries. She believes he may be gathering forces to the far west of Nashkel.~,QUEST)
+END
+
+
+IF
+Global("IshyQuest","GLOBAL",5)
+See([PC])
+Global("killedthejfucker","GLOBAL",0)
+THEN RESPONSE #100
+SetGlobal("killedthejfucker","GLOBAL",1)
+AddJournalEntry(~Mage Huntress Extraordinaire
+
+I was successful in aiding Ishlilka against the criminal mage Juleska and his new party. In return she has promised to serve me until I avenge my father, and she seems quite pleased.~,QUEST_DONE)
+END
+
+IF
+Global("ishquestextra","GLOBAL",1)
+THEN RESPONSE #100
+SetGlobal("ishquestextra","GLOBAL",2)
+AddJournalEntry(~Mage Huntress Extraordinaire
+
+A beggar in Nashkel was bribed into revealing what he had overheard from our target's night of drinking. Apparently, he has now taken control of a band of ogres and is just to the east of a stronghold of gnolls. We should be careful.~,QUEST)
+TakePartyGold(20)
+END
+
+IF 
+Global("sodtimetogetfalteri","GLOBAL",0)
+Global("IshyQuest","GLOBAL",7)
+THEN RESPONSE #100
+AddJournalEntry(~The Hunt Continues
+
+Ishlilka has informed me that in order to continue to serve in my party she took another assignment close to Baldur's Gate. This time she hunts a mage known as Falterion who has recently signed on with the Crusade for unknown reasons. Why Ishlilka is set out against these targets in particular is still a mystey.~,QUEST)
+SetGlobal("sodtimetogetfalteri","GLOBAL",1)
+END 
+ 
+//////////////////////
+////////////////////
+/////////////////////
+
+IF 
+InParty(Myself)
+Gender(Player1,MALE)
+Global("P!dothisonlyonce","GLOBAL",0)
+OR(3)				
+Race(Player1,HUMAN)
+Race(Player1,HALF_ELF)
+Race(Player1,HALFORC)
+Global("IshyLoveTalk","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("IshyLoveTalk","GLOBAL",1)
+SetGlobal("IshyRomanceActive","GLOBAL",1)
+RealSetGlobalTimer("IshyRomanceTimer","GLOBAL",2600)
+SetGlobal("P!dothisonlyonce","GLOBAL",1)
+END
+
+
+IF
+InParty(Myself)
+Global("IshyQuest","GLOBAL",0)
+!Global("Chapter","GLOBAL",1)
+!Global("Chapter","GLOBAL",2)
+Global("ishgoodgodimretarded","GLOBAL",0)
+!Global("endofbg1","GLOBAL",1)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("IshyQuestTimer","GLOBAL",2350)
+SetGlobal("ishgoodgodimretarded","GLOBAL",1)
+END
+
+
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("IshyQuestTimer","GLOBAL")
+Global("IshyQuest","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("IshyQuest","GLOBAL",1)
+StartDialogueNoSet(Player1)
+END
+
+IF 
+InParty(Myself)
+Global("IshyTalk","GLOBAL",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("IshyTimer","GLOBAL",5600)
+SetGlobal("IshyTalk","GLOBAL",1)       // Each block must run only once, which is also why we set O#BranTalk to 1 - it means the same set of conditions will never be repeated again
+END
+
+IF
+InParty(Myself)
+See(Player1) // MyNPC is in party and sees Player1
+RealGlobalTimerExpired("IshyRomanceTimer","GLOBAL") // the timer has expired, so it is time for a new lovetalk
+Global("IshyRomanceActive","GLOBAL",2) // romance is still active
+!AreaType(DUNGEON) // romance is more active
+CombatCounter(0)
+!See([ENEMY]) // no romancing during combat
+OR(4) // let us pretend we have only four lovetalks. You could have as many as you like, of course.
+Global("IshyLoveTalk","GLOBAL",1)
+Global("IshyLoveTalk","GLOBAL",3)
+Global("IshyLoveTalk","GLOBAL",5)
+Global("IshyLoveTalk","GLOBAL",7) // "1,3,5,7" means - "between lovetalks", "2,4,6,8" means "it is time for a lovetalk"
+THEN
+RESPONSE #100
+IncrementGlobal("IshyLoveTalk","GLOBAL",1) // the variable increases by one, telling that it is time for a lovetalk
+END
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("IshyTimer","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)    // CamDawg's condition, means that everyone can talk and is not charmed, confused, silenced and so on
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)                          // These two lines mean "no battle"
+!See([ENEMY])
+!AreaType(DUNGEON)			  // No talks in dungeons, right?
+OR(5)                                    // Be careful here: 15 must mean EXACTLY 15 lines included in the condition. The 16th line will not be included!
+Global("IshyTalk","GLOBAL",1)
+Global("IshyTalk","GLOBAL",3)
+Global("IshyTalk","GLOBAL",5)
+Global("IshyTalk","GLOBAL",7)
+Global("IshyTalk","GLOBAL",9)
+THEN
+RESPONSE #100
+IncrementGlobal("IshyTalk","GLOBAL",1)
+END
+
+///////////////////////////////////////////////////
+///////////////bgEE romance timer///////////////////
+//////////////////////////////////////////////////////
+
+
+IF
+InParty(Myself)
+See(Player1)                         // ensures that your NPC is in party and sees Player1
+!AreaType(DUNGEON)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+RealGlobalTimerExpired("IshyRomanceTimer","GLOBAL") // this is actually important: this script block will only be fully checked when the timer has expired, so the performance wouldn't slow down
+OR(4)
+Global("IshyLoveTalk","GLOBAL",2)
+Global("IshyLoveTalk","GLOBAL",4)
+Global("IshyLoveTalk","GLOBAL",6)
+Global("IshyLoveTalk","GLOBAL",8)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+////////////////////////////////
+/////////bgEE timer ////////////
+//////////////////////////////////
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!AreaType(DUNGEON)
+CombatCounter(0)
+!See([ENEMY])
+OR(5)                                    // Again, OR(5) means that fifteen lines below are a part of OR() command
+Global("IshyTalk","GLOBAL",2)
+Global("IshyTalk","GLOBAL",4)
+Global("IshyTalk","GLOBAL",6)
+Global("IshyTalk","GLOBAL",8)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+InParty(Myself)
+See(Player1)
+Global("IshyTalk","GLOBAL",10)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!AreaType(DUNGEON)
+CombatCounter(0)
+!See([ENEMY])
+PartyRested()
+THEN RESPONSE #100 
+StartDialogueNoSet(Player1)
+END 
+
+
+IF 
+Global("endofbg1","GLOBAL",1)
+Global("IshyTalk","GLOBAL",7)
+!Dead("Falteri")
+THEN RESPONSE #100 
+SetGlobal("IshyTalk","GLOBAL",6)
+END 
+
+IF 
+Dead("Falteri")
+THEN RESPONSE #100
+SetGlobal("IshyTalk","GLOBAL",8)
+StartDialogueNoSet(Player1)
+SetGlobal("IshyQuest","GLOBAL",9)
+END 
+
+
+IF 
+Global("endofbg1","GLOBAL",1)
+Global("ishresetconvo","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("IshyTalk","GLOBAL",1)
+Wait(1)
+SetGlobal("ishresetconvo","GLOBAL",1)
+END 
+
+IF
+Global("endofbg1","GLOBAL",1)
+!Global("IshyRomanceActive","GLOBAL",0)
+Global("convoresetish","GLOBAL",0)
+THEN RESPONSE #100
+SetGlobal("IshyLoveTalk","GLOBAL",1)
+Wait(1)
+SetGlobal("convoresetish","GLOBAL",1)
+END 
+
+
+// Chapter initiated dialogue for 7
+
+
+// Dialogue upon reaching the Undercity
+
+IF
+Global("ishfinalfight","AR0123",0)
+!Global("IshyRomanceActive","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("ishfinalfight","AR0123",1)
+StartDialogueNoSet(Player1)
+END
+
+// End Quest Dialogue- now with 100% more dialogue
+
+IF
+See ([PC])
+Dead("Juleska")
+CombatCounter(0)
+!See([ENEMY])
+Global("stahp","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("IshyQuest","GLOBAL",4)
+StartDialogueNoSet(Player1)
+SetGlobal("stahp","GLOBAL",1)
+END
+
+
+
+//Sleepy outdoor adventure conversations 
+
+// Intro cutscene
+
+IF
+    See([PC])
+	Global("endofbg1","GLOBAL",0)
+    NumTimesTalkedTo(0)
+	Global("ishcutscene","AR2300",0)
+  THEN
+    RESPONSE #100
+      ClearAllActions()
+      StartCutSceneMode()
+	  Face(14)
+      CutSceneId(Player1)
+      MoveViewPoint([1900.2000],VERY_FAST)
+      ActionOverride(Player1,MoveToPointNoInterrupt([1839.1936]))
+      ActionOverride(Player2,MoveToPointNoInterrupt([1780.1900]))
+      Swing()
+      ActionOverride(Player1,Face(6))
+      ActionOverride(Player2,Face(6))
+      ActionOverride(Player3,MoveToPointNoInterrupt([1740.1840]))
+      ActionOverride(Player4,MoveToPointNoInterrupt([1650.1815]))
+      ActionOverride(Player5,MoveToPointNoInterrupt([2000.1850]))
+      ActionOverride(Player6,MoveToPointNoInterrupt([2100.2100]))
+      ActionOverride(Player3,Face(10))
+      ActionOverride(Player4,Face(8))
+      ActionOverride(Player5,Face(6))
+      ActionOverride(Player6,Face(6))
+      ActionOverride("#Ishy",StartDialogueNoSet(Player1))
+      EndCutSceneMode()
+	  SetGlobal("ishcutscene","AR2300",1)
+  END
+ 
+IF
+Global("P!beginthesiege","BD0120",0)
+THEN RESPONSE #100
+SetDialogue("bdishy")
+SetGlobal("P!beginthesiege","BD0120",1)
+END
+
+IF
+Global("IshyQuest","GLOBAL",5)
+Global("P!ishfuckyou","GLOBAL",0)
+THEN RESPONSE #100
+SetQuestDone(~Mage Huntress Extraordinaire
+
+Ishlilka has told me her real reason for coming here was to hunt down a rogue mage known as Juleska, who escaped capture by her father's mercenaries. She believes he may be gathering forces to the far west of Nashkel.~)
+SetQuestDone(~Mage Huntress Extraordinaire
+
+A beggar in Nashkel was bribed into revealing what he had overheard from our target's night of drinking. Apparently, he has now taken control of a band of ogres and is just to the east of a stronghold of gnolls. We should be careful.~)
+SetGlobal("P!ishfuckyou","GLOBAL",1)
+END
+
+IF
+Global("IshyQuest","GLOBAL",10)
+Global("P!ishfuckyou2","GLOBAL",0)
+THEN RESPONSE #100 
+SetQuestDone(~The Hunt Continues
+
+Ishlilka has informed me that in order to continue to serve in my party she took another assignment close to Baldur's Gate. This time she hunts a mage known as Falteri who has recently signed on with the Crusade for unknown reasons. Why Ishlilka is set out against these targets in particular is still a mystey.~)
+SetGlobal("P!ishfuckyou2","GLOBAL",1)
+END 
+
+
+IF 
+Global("P!beginthesiege2","BD0120",0)
+THEN RESPONSE #100
+RealSetGlobalTimer("IshyTimer","GLOBAL",3200)
+SetGlobal("P!beginthesiege2","BD0120",1)
+END  
+
+IF
+Global("Ishtrollcave","BD0062",0)
+CombatCounter(0)
+!See([ENEMY])
+THEN RESPONSE #100
+StartDialogueNoSet(Player1)
+SetGlobal("Ishtrollcave","BD0062",1)
+END 
+
+IF
+Global("Ishtrollcave2","BD7110",0)
+CombatCounter(0)
+!See([ENEMY])
+THEN RESPONSE #100
+StartDialogueNoSet(Player1)
+SetGlobal("Ishtrollcave2","BD7110",1)
+END 
+
+
+IF 
+Global("P!beginthesiege4","BD0120",0)
+THEN RESPONSE #100
+SetGlobal("endofbg1","GLOBAL",1)
+SetGlobal("P!beginthesiege4","BD0120",1)
+END  
+
+IF 
+Global("endofbg1","GLOBAL",1)
+Global("IshyFistHelp","GLOBAL",0)
+Global("Chapter","GLOBAL",7)
+THEN RESPONSE #100
+LeaveParty()
+MoveBetweenAreas("BD0010",[1069.533],7)
+SetGlobal("IshyFistHelp","GLOBAL",1)
+END
+
+IF
+Global("Chapter","GLOBAL",13)
+Global("IshSkieDeadLeave","GLOBAL",0)
+THEN RESPONSE #100
+LeaveParty()
+DisplayStringHead(Myself,~I...I don't know what to think...i'm sorry, but I must go.~)
+MoveBetweenAreas("BD0010",[1069.533],7)
+SetGlobal("IshySkieDeadLeave","GLOBAL",1)
+END 

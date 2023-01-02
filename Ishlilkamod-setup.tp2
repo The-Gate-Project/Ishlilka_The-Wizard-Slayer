@@ -1,0 +1,300 @@
+BACKUP ~Ishlilkamod/backup~
+AUTHOR ~Damian Warneke (WarChiefZeke @ baldurs gate forums or Gibberlings 3)~
+BEGIN ~Ishlilka mod for BG [FULL VERSION 1.3]~
+
+ACTION_IF GAME_IS BGEE THEN BEGIN // bgee stuff, use BG2EE for bg2ee
+  // do bgee stuff
+END
+
+APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
+  ~0x80101FEF CD_STATE_NOTVALID~
+  UNLESS ~CD_STATE_NOTVALID~
+  
+  COPY ~Ishlilkamod/Items/I!qspr.itm~ ~override/I!qspr.itm~ 
+  COPY ~Ishlilkamod/Characters/JULESKA.cre~ ~override/JULESKA.cre~ 
+  COPY ~Ishlilkamod/Characters/Falteri.cre~ ~override/Falteri.cre~ 
+  COPY ~Ishlilkamod/Characters/Falterion.cre~ ~override/Falterion.cre~ 
+  COPY ~Ishlilkamod/Characters/fakecrus.cre~ ~override/fakecrus.cre~ 
+  COPY ~Ishlilkamod/Characters/fakcrus2.cre~ ~override/fakcrus2.cre~ 
+  COPY ~Ishlilkamod/Scripts/ishquest.baf~ ~override/ishquest.baf~
+  COPY ~Ishlilkamod/Scripts/Juleskspells.baf~ ~override/Juleskspells.baf~
+  COPY ~Ishlilkamod/Scripts/Falteri.baf~ ~override/Falteri.baf~
+  COPY ~Ishlilkamod/Scripts/ishquest.baf~ ~override/ishquest.baf~
+  COPY ~Ishlilkamod/Scripts/ishyscrp.baf~ ~override/ishyscrp.baf~
+  COPY ~Ishlilkamod/Scripts/Faltwar.baf~ ~override/faltwar.baf~ 
+ COPY ~Ishlilkamod/Items/fiswrd.itm~ ~override/fiswrd.itm~ 
+  
+COPY ~Ishlilkamod/Characters/#Ishy.cre~ ~override/#Ishy.cre~
+ SAY BIO ~When asked about her past, Ishlilka has little to say. She is a trained mage hunter, so she says, yet her bearing suggests she has seen little in the way of real combat.~
+ SAY NAME1 ~Ishlilka~
+ SAY NAME2 ~Ishlilka~ 
+ SAY MORALE ~I won't forget this humiliation!~ [I!iflee]
+ SAY HAPPY ~I'm glad I joined up with you, this group is honorable.~
+ SAY LEADER ~Hm, a band of mercenaries under my control...this should be interesting.~ 
+ SAY TIRED ~You're quite the slave driver, aren't you?~ [I!sleep]
+ SAY BORED ~Have all our tasks been completed?~
+ SAY BATTLE_CRY1 ~Heh, how foolish...here goes!~ [I!cry]
+ SAY BATTLE_CRY2 ~Got it!~ [I!act2]
+ SAY BATTLE_CRY3 ~My resolve is set!~ [I!ib2]
+ SAY HURT ~Enough of this disgrace...i'll redeem myself now!~ [I!hrt]
+ SAY DYING ~Father...i'm sorry...~ [I!igone]
+ SAY DAMAGE ~~ 
+ SAY AREA_FOREST ~The scenery is nice, but shouldn't be push on?~ 
+ SAY AREA_CITY ~~ 
+ SAY AREA_DUNGEON ~I have a bad feeling...~ [I!dung]
+ SAY AREA_DAY ~What a beautiful day.~ 
+ SAY AREA_NIGHT ~Let's keep on alert. Who knows what could sneak up on us.~ 
+  SAY SELECT_COMMON1 ~Yes?~ [I!ishs1]
+  SAY SELECT_COMMON2 ~Is everyone ready?~ [I!ishs2]
+  SAY SELECT_COMMON3 ~Is something wrong?~ [I!ishs3]
+  SAY SELECT_ACTION1 ~I agree.~ [I!iact1]
+  SAY SELECT_ACTION2 ~Leave it to me.~ [I!act3]
+  SAY SELECT_ACTION3 ~Very well. Leave the rest to me.~  [I!ish4]
+  SAY SELECT_ACTION4 ~Well then! Let's go!~ [I!ib3]
+  SAY SELECT_ACTION5 ~Now, shall we get started?~ [I!ib1]
+  SAY COMPLIMENT1 ~The way you fought proves you will serve our team well...I have high hopes for you.~ [I!nice]
+  SAY RESPONSE_TO_COMPLIMENT2 ~You have my thanks.~ [I!thanks]
+  SAY INSULT ~I'll tell you the difference between you and me...it's my iron resolve.~ [I!ishdiss]
+  SAY CRITICAL_HIT ~Excellent attack!~ [I!icrit] 
+  SAY CRITICAL_MISS ~I made a slight miscalculation.~ [I!miss] 
+  SAY TARGET_IMMUNE ~Strikes are ineffective!~ [I!fail]  
+  SAY INVENTORY_FULL ~I can't carry this, sorry.~ 
+  SAY SELECT_RARE1 ~~ 
+  SAY SELECT_RARE2 ~~ 
+  SAY REACT_TO_DIE_GENERAL ~No! I'll not let your death be in vain.~ [I!ibye]
+    ADD_CRE_ITEM ~sper01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP
+    ADD_CRE_ITEM ~I!qspr~ #0 #0 #0 ~IDENTIFIED~ ~INV1~ 
+    ADD_CRE_ITEM ~shld01~ #0 #0 #0 ~IDENTIFIED~ ~INV2~ 
+    ADD_CRE_ITEM ~chan01~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP
+  COPY ~Ishlilkamod/Sounds~ ~override~
+
+///////
+
+
+COPY_EXISTING ~I!qspr.itm~ ~override/I!qspr.itm~
+
+SAY NAME1 ~Small Spear~
+SAY NAME2 ~Returning Javelin +1~
+
+SAY 0x50 ~This spear radiates a minor magical enchantment.~
+SAY 0x54 ~Returning Javelin +1: Spike of Sickness
+
+When asked about where she acquired this weapon, Ishlilka tells you that it was a trophy won on the field by her father, and given to her upon her recent departure to protect her on her journeys. It clearly posseses sentimental value for her, though she will give it up if neccesary.
+
+The Spike of Sickness is smaller and lighter than a normal spear, making it inefficient for melee combat but allowing it to be wielded and thrown by one hand. It also posseses a minor enchantment allowing it to return to the users hand upon being thrown, and also has a chance of inflicting minor poison damage.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d6 + 1 poison damage over 2 rounds unless the target saves vs. death
+Speed factor: 2
+Type: One-handed
+Profiency: Spears
+Requires:
+5 Strength
+
+Weight: 2~
+
+
+COPY_EXISTING ~fiswrd.itm~ ~override/fiswrd.itm~
+
+SAY NAME1 ~Blue Colored Blade~
+SAY NAME2 ~Sword of the Darkness Flame~
+
+SAY 0x50 ~This blade radiates a minor magical enchantment.~
+SAY 0x54 ~Longsword +2: Sword of the Darkness Flame
+
+This blade, when not held, appears as a simple blade with a blue-tinged hilt. Upon being grasped, however, the blade alights with what would appear to be fire...where it not for it's blackened color.
+
+The Sword of Darkness Flame draws upon both negative energy as well as the element of fire, creating a powerful enchantment. The blade itself is rather ordinary, however, and even sort of dull. Were it not for the powerful magic behind it, the sword would be unremarkable. Whether the blade itself has worn down over time, or whether the strength of the elemental enchantment degraded the quality of the blade, you cannot say.
+
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d6 + 1-2 magic damage and 1-2 fire damage
+Speed factor: 6
+Type: One-handed
+Profiency: Longsword
+Requires:
+8 Strength
+
+Weight: 6~
+
+//////////////////////////////
+// Quest enemies ////////////
+////////////////////////////
+
+COPY ~Ishlilkamod/Characters/JULESKA.cre~ ~override/JULESKA.cre~
+ SAY NAME1 ~Juleska~
+    ADD_CRE_ITEM ~POTN10~ #0 #0 #0 ~IDENTIFIED~ ~INV4~ 
+	
+	
+COPY ~Ishlilkamod/Characters/Falteri.cre~ ~override/Falteri.cre~
+SAY NAME1 ~Falterion~ 
+
+
+COPY ~Ishlilkamod/Characters/fakecrus.cre~ ~override/fakecrus.cre~
+SAY NAME1 ~"Crusader"~ 
+
+
+COPY ~Ishlilkamod/Characters/Khanji.cre~ ~override/Khanji.cre~
+SAY NAME1 ~"Khanji"~ 
+
+COPY ~Ishlilkamod/Characters/fakcrus2.cre~ ~override/fakcrus2.cre~
+SAY NAME1 ~"Crusader"~ 
+
+ 
+///////////////////////
+/////////////////////
+////////////////////
+
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDMKHIIB.d~
+
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDCORWIB.d~
+
+
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDSAFANB.d~
+
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDGARRIB.d~
+
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDRASAAB.d~
+
+
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDMINSCB.d~
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDDYNAHB.d~
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDVICONB.d~
+
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDVOGHIB.d~
+
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDVICONB.d~
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDNEERAB.d~
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDGLINTB.d~
+
+
+
+COMPILE ~Ishlilkamod/Dialogues/BDDORNB.d~
+
+
+
+// Comiling dialogues 
+
+
+COMPILE ~Ishlilkamod/Dialogues/ishyP.d~
+COMPILE ~Ishlilkamod/Dialogues/IshyD.d~
+COMPILE ~Ishlilkamod/Dialogues/BISHY.d~
+COMPILE ~Ishlilkamod/Dialogues/ishyhi.d~
+COMPILE ~Ishlilkamod/Scripts/JuleskD.d~
+COMPILE ~Ishlilkamod/Dialogues/bdishy.d~
+COMPILE ~Ishlilkamod/Scripts/FalteriD.d~
+
+// Journal Entries
+
+
+
+// Compiling scripts
+
+COMPILE ~Ishlilkamod/Scripts/ishyscrp.baf~
+COMPILE ~Ishlilkamod/Scripts/ishquest.baf~
+COMPILE ~Ishlilkamod/Scripts/Juleskspells.baf~
+COMPILE ~Ishlilkamod/Scripts/faltwar.baf~
+COMPILE ~Ishlilkamod/Scripts/Falteri.baf~
+
+// Adding her location 
+
+EXTEND_TOP ~AR2300.bcs~ ~Ishlilkamod/Scripts/AR2300.baf~
+EXTEND_TOP ~AR5200.bcs~ ~Ishlilkamod/Scripts/AR5200.baf~
+EXTEND_TOP ~BD5000.bcs~ ~Ishlilkamod/Scripts/BD5000.baf~
+
+
+COPY ~Ishlilkamod/Portraits/IshyM.bmp~ ~override/IshyM.bmp~
+COPY ~Ishlilkamod/Portraits/IshyS.bmp~ ~override/IshyS.bmp~
+
+
+
+APPEND ~pdialog.2da~
+~#Ishy IshyP IshyD bdishy~
+UNLESS ~#Ishy~
+
+APPEND ~interdia.2da~
+~#Ishy BISHY~
+UNLESS ~#Ishy~
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~BDBANTER.2DA~) BEGIN
+
+	APPEND ~BDBANTER.2DA~ ~#ISHY    BISHY~
+                       UNLESS ~#ISHY~
+        
+END ELSE BEGIN // SoD does not ship with a BDBanter.2DA file, but does reference it (from CAMPAIGN.2DA), so create it (code adapted from EET implementation by K4thos) 
+
+<<<<<<<< .../ishy-inlined/BDBANTER.2DA
+2DA      V1.0
+NONE
+         FILE
+KIVAN    BDKIVANB
+ALORA    BDALORAB
+MINSC    BDMINSCB
+DYNAHEIR BDDYNAHB
+YESLICK  BDYESLIB
+CORAN    BDCORANB
+AJANTIS  BDAJANTB
+KHALID   BDKHALIB
+JAHEIRA  BDJAHEIB
+GARRICK  BDGARRIB
+SAFANA   BDSAFANB
+FALDORN  BDFALDOB
+BRANWEN  BDBRANWB
+QUAYLE   BDQUAYLB
+XAN      BDXANB
+SKIE     BDSKIEB
+ELDOTH   BDELDOTB
+XZAR     BDXZARB
+MONTARON BDMONTAB
+TIAX     BDTIAXB
+KAGAIN   BDKAGAIB
+SHARTEEL BDSHARTB
+EDWIN    BDEDWINB
+VICONIA  BDVICONB
+IMOEN2   BDIMOENB
+NEERA    BDNEERAB
+DORN     BDDORNB
+RASAAD   BDRASAAB
+BAELOTH  BDBAELOB
+VOGHILN  BDVOGHIB
+MKHIIN   BDMKHIIB
+CORWIN   BDCORWIB
+GLINT    BDGLINTB
+#ISHY    BISHY
+>>>>>>>>
+
+	COPY ~.../ishy-inlined/BDBANTER.2DA~ ~override~ // copy the in-lined (memory-only) file we defined above into the override folder (as a real file)
+
+END
+
+APPEND ~BDDialog.2DA~
+~#Ishy IshyP bdishy~
+UNLESS ~#Ishy~

@@ -1,0 +1,19 @@
+ 
+IF
+    !See([GOODCUTOFF.0.0.SORCERER]) // Highest priority
+    !See([GOODCUTOFF.0.0.MAGE_ALL])
+    !See([GOODCUTOFF.0.0.CLERIC_ALL])
+    !See([GOODCUTOFF.0.0.DRUID_ALL])
+    !See([GOODCUTOFF.0.0.BARD_ALL]) // Default target
+    !See([GOODCUTOFF])
+THEN
+    RESPONSE #100
+END
+
+IF 
+THEN
+	RESPONSE #100
+		EquipRanged()
+		Attack(LastSeenBy(Myself))
+END 
+

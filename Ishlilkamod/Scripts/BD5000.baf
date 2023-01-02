@@ -1,0 +1,22 @@
+IF
+Global("IshyQuest","GLOBAL",7)
+Global("falterithemage","GLOBAL",0)
+THEN RESPONSE #100
+CreateCreature("Falteri",[4003.3557],9)
+SetGlobal("falterithemage","GLOBAL",1)
+END
+
+IF 
+Global("falteriport","GLOBAL",1)
+Global("falterithemageally","GLOBAL",0)
+THEN RESPONSE #100
+CreateCreature("fakecrus",[3458.2690],2)
+CreateCreature("fakecrus",[3372.2630],4)
+SetGlobal("falterithemageally","GLOBAL",1)
+CreateCreature("fakecrus",[3363.2554],3)
+CreateCreature("fakcrus2",[3276.2666],8)
+CreateCreature("fakcrus2",[3201.2538],9) 
+CreateCreature("fakcrus2",[3233.2501],9) 
+CreateCreature("fakcrus2",[3168.2238],9) 
+CreateCreature("Khanji",[3299.2472],9) 
+END 

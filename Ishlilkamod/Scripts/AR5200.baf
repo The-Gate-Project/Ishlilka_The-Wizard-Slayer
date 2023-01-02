@@ -1,0 +1,19 @@
+IF
+Global("IshyQuest", "GLOBAL",2)
+Global("doit","GLOBAL",0)
+THEN
+    RESPONSE #100
+CreateCreature("Juleska",[600.1400],7)
+CreateCreature("OGREMA",[540.1200],7)
+CreateCreature("OGREMA",[760.1300],7)
+CreateCreature("OGRE",[500.1000],7)
+CreateCreature("OGRE",[450.1100],7)
+CreateCreature("OGRE",[700.1549],7)
+CreateCreature("OGRE",[650.1640],7)
+CreateCreature("HOBGOBA",[439.1172],7)
+CreateCreature("HOBGOBA",[464.1256],7)
+CreateCreature("HOBGOBA",[451.1280],7)
+CreateCreature("HOBGOBA",[525.1322],7)
+SetGlobal("doit","GLOBAL",1)
+        Continue()
+END

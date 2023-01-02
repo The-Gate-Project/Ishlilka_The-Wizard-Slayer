@@ -1,0 +1,67 @@
+IF
+    See([PC])
+    NumTimesTalkedTo(0)
+THEN
+    RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+See(NearestEnemyof(Myself))
+HasItem("potn10",Myself)
+THEN
+RESPONSE #100
+      UseItem("potn10",Myself)
+      Continue()
+END
+
+IF
+See(NearestEnemyof(Myself))
+HaveSpell(WIZARD_FLAME_ARROW)
+THEN
+RESPONSE #100
+Spell(NearestEnemyof(Myself),WIZARD_FLAME_ARROW)
+END
+
+
+IF
+See(NearestEnemyof(Myself))
+HaveSpell(WIZARD_BLINDNESS)
+!StateCheck(NearestEnemyOf(Myself),STATE_SLEEPING)
+!StateCheck(NearestEnemyOf(Myself),STATE_HELPLESS)
+THEN
+RESPONSE #100
+Spell(NearestEnemyof(Myself),WIZARD_BLINDNESS)
+END
+
+IF
+See(NearestEnemyof(Myself))
+HaveSpell(WIZARD_POWER_WORD_SLEEP)
+!StateCheck(NearestEnemyOf(Myself),STATE_SLEEPING)
+!StateCheck(NearestEnemyOf(Myself),STATE_HELPLESS)
+THEN
+RESPONSE #100
+Spell(NearestEnemyof(Myself),WIZARD_POWER_WORD_SLEEP)
+END
+
+IF
+See(NearestEnemyof(Myself))
+HaveSpell(WIZARD_REFLECTED_IMAGE)
+THEN
+RESPONSE #100
+Spell(Myself,WIZARD_REFLECTED_IMAGE)
+END
+
+IF
+See(NearestEnemyof(Myself))
+!HaveSpell(WIZARD_REFLECTED_IMAGE)
+THEN
+RESPONSE #100
+ReallyForceSpell(NearestEnemyof(Myself),WIZARD_HORROR)
+DisplayStringHead(Player1,~(Juleska looks drained after casting that last spell. Perhaps now you should finish him off.)~)
+Wait(16)
+Continue()
+END
+
+
+
