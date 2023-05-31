@@ -1,0 +1,79 @@
+@500  = ~Ishlilka mod for BGSoD and EET~
+@501  = ~When asked about her past, Ishlilka has little to say. She is a trained mage hunter, so she says, yet her bearing suggests she has seen little in the way of real combat.~
+@502  = ~Ishlilka~
+@503  = ~I won't forget this humiliation!~ [I!iflee]
+@504  = ~I'm glad I joined up with you, this group is honorable.~
+@505  = ~Hm, a band of mercenaries under my control...this should be interesting.~
+@506  = ~You're quite the slave driver, aren't you?~ [I!sleep]
+@507  = ~Have all our tasks been completed?~
+@508  = ~Heh, how foolish...here goes!~ [I!cry]
+@509  = ~Got it!~ [I!act2]
+@510  = ~My resolve is set!~ [I!ib2]
+@511  = ~Enough of this disgrace...i'll redeem myself now!~ [I!hrt]
+@512  = ~Father...i'm sorry...~ [I!igone]
+
+@514  = ~The scenery is nice, but shouldn't be push on?~
+@515  = ~I have a bad feeling...~ [I!dung]
+@516  = ~What a beautiful day.~
+@517  = ~Let's keep on alert. Who knows what could sneak up on us.~
+@518  = ~Yes?~ [I!ishs1]
+@519  = ~Is everyone ready?~ [I!ishs2]
+@520  = ~Is something wrong?~ [I!ishs3]
+@521  = ~I agree.~ [I!iact1]
+@522  = ~Leave it to me.~ [I!act3]
+@523  = ~Very well. Leave the rest to me.~ [I!ish4]
+@524  = ~Well then! Let's go!~ [I!ib3]
+@525  = ~Now, shall we get started?~ [I!ib1]
+@526  = ~The way you fought proves you will serve our team well...I have high hopes for you.~ [I!nice]
+@527  = ~You have my thanks.~ [I!thanks]
+@528  = ~I'll tell you the difference between you and me...it's my iron resolve.~ [I!ishdiss]
+@529  = ~Excellent attack!~ [I!icrit]
+@530  = ~I made a slight miscalculation.~ [I!miss]
+@531  = ~Strikes are ineffective!~ [I!fail]
+@532  = ~I can't carry this, sorry.~
+@533  = ~No! I'll not let your death be in vain.~ [I!ibye]
+@534  = ~Small Spear~
+@535  = ~Returning Javelin +1~
+@536  = ~This spear radiates a minor magical enchantment.~
+@537  = ~Returning Javelin +1: Spike of Sickness
+
+When asked about where she acquired this weapon, Ishlilka tells you that it was a trophy won on the field by her father, and given to her upon her recent departure to protect her on her journeys. It clearly posseses sentimental value for her, though she will give it up if neccesary.
+
+The Spike of Sickness is smaller and lighter than a normal spear, making it inefficient for melee combat but allowing it to be wielded and thrown by one hand. It also posseses a minor enchantment allowing it to return to the users hand upon being thrown, and also has a chance of inflicting minor poison damage.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d6 + 1 poison damage over 2 rounds unless the target saves vs. death
+Speed factor: 2
+Type: One-handed
+Profiency: Spears
+Requires:
+5 Strength
+
+Weight: 2~
+@538  = ~Blue Colored Blade~
+@539  = ~Sword of the Darkness Flame~
+@540  = ~This blade radiates a minor magical enchantment.~
+@541  = ~Longsword +2: Sword of the Darkness Flame
+
+This blade, when not held, appears as a simple blade with a blue-tinged hilt. Upon being grasped, however, the blade alights with what would appear to be fire...where it not for it's blackened color.
+
+The Sword of Darkness Flame draws upon both negative energy as well as the element of fire, creating a powerful enchantment. The blade itself is rather ordinary, however, and even sort of dull. Were it not for the powerful magic behind it, the sword would be unremarkable. Whether the blade itself has worn down over time, or whether the strength of the elemental enchantment degraded the quality of the blade, you cannot say.
+
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d6 + 1-2 magic damage and 1-2 fire damage
+Speed factor: 6
+Type: One-handed
+Profiency: Longsword
+Requires:
+8 Strength
+
+Weight: 6~
+@542  = ~Juleska~
+@543  = ~Falterion~
+@544  = ~"Crusader"~
+@545  = ~"Khanji"~
