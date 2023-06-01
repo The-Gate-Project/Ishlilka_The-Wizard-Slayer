@@ -1,8 +1,0 @@
-IF
-    Global("SpawnIshy", "GLOBAL", 0)
-THEN
-    RESPONSE #100
-        SetGlobal("SpawnIshy", "GLOBAL", 1)
-        CreateCreature("#Ishy",[1730.1910],7)
-        Continue()
-END

@@ -16,6 +16,9 @@ ALWAYS
 		noconvert_array = Ad_noconvert
 		reload_array = Ad_reload
 	END
+	
+INCLUDE ~Ishlilkamod/Lib/g3_cpmvars_master.tpa~
+
 END
 
 LANGUAGE ~English~ 
@@ -25,26 +28,7 @@ LANGUAGE ~English~
 		 ~Ishlilkamod/Tra/English/Dialogues.tra~
 
 BEGIN @500 /* Ishlilka mod for BGSoD and EET */
-
-// EET compatibility
-
-ACTION_IF GAME_IS ~bgee~
-BEGIN
-	OUTER_SPRINT "area_prefix" AR
-	OUTER_SET isEET = 0
-        INCLUDE ~Ishlilkamod/Lib/g3_bgee_cpmvars.tpa~
-END
-	
-ACTION_IF GAME_IS ~eet~
-BEGIN
-	OUTER_SPRINT "area_prefix" BG
-	OUTER_SET isEET = 1
-	INCLUDE ~eet/other/cpmvars/eet_cpmvars.tpa~
-END
-
-ACTION_IF GAME_IS BGEE THEN BEGIN // bgee stuff, use BG2EE for bg2ee
-  // do bgee stuff
-END
+REQUIRE_PREDICATE GAME_IS ~bgee eet~ ~Ishlilka must be installed on BGEE or EET~
 
 APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
   ~0x80101FEF CD_STATE_NOTVALID~
@@ -62,7 +46,7 @@ APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
   COPY ~Ishlilkamod/Scripts/ishquest.baf~ ~override/ishquest.baf~
   COPY ~Ishlilkamod/Scripts/ishyscrp.baf~ ~override/ishyscrp.baf~
   COPY ~Ishlilkamod/Scripts/Faltwar.baf~ ~override/faltwar.baf~ 
- COPY ~Ishlilkamod/Items/fiswrd.itm~ ~override/fiswrd.itm~ 
+  COPY ~Ishlilkamod/Items/fiswrd.itm~ ~override/fiswrd.itm~ 
   
 COPY ~Ishlilkamod/Characters/#Ishy.cre~ ~override/#Ishy.cre~
  SAY BIO @501 /* When asked about her past, Ishlilka has little to say. She is a trained mage hunter, so she says, yet her bearing suggests she has seen little in the way of real combat. */
@@ -241,11 +225,11 @@ COMPILE ~Ishlilkamod/Dialogues/BDDORNB.d~
 
 
 
-// Comiling dialogues 
+// Compiling dialogues 
 
 
 COMPILE ~Ishlilkamod/Dialogues/ishyP.d~
-COMPILE ~Ishlilkamod/Dialogues/IshyD.d~
+COMPILE EVALUATE_BUFFER ~Ishlilkamod/Dialogues/IshyD.d~
 COMPILE ~Ishlilkamod/Dialogues/BISHY.d~
 COMPILE ~Ishlilkamod/Dialogues/ishyhi.d~
 COMPILE ~Ishlilkamod/Dialogues/JuleskD.d~
@@ -259,6 +243,7 @@ COMPILE ~Ishlilkamod/Dialogues/FalteriD.d~
 // Compiling scripts
 
 COMPILE ~Ishlilkamod/Scripts/ishyscrp.baf~
+    EVALUATE_BUFFER
 COMPILE ~Ishlilkamod/Scripts/ishquest.baf~
 COMPILE ~Ishlilkamod/Scripts/Juleskspells.baf~
 COMPILE ~Ishlilkamod/Scripts/faltwar.baf~
@@ -266,9 +251,12 @@ COMPILE ~Ishlilkamod/Scripts/Falteri.baf~
 
 // Adding her location 
 
-EXTEND_TOP ~%area_prefix%2300.bcs~ ~Ishlilkamod/Scripts/BG2300.baf~
-EXTEND_TOP ~%area_prefix%5200.bcs~ ~Ishlilkamod/Scripts/BG5200.baf~
+EXTEND_TOP ~%FriendlyArmInn_BCS%.bcs~ ~Ishlilkamod/Scripts/AR2300.baf~
+    EVALUATE_BUFFER
+EXTEND_TOP ~%DryadFalls_BCS%.bcs~ ~Ishlilkamod/Scripts/AR5200.baf~
+    EVALUATE_BUFFER
 EXTEND_TOP ~BD5000.bcs~ ~Ishlilkamod/Scripts/BD5000.baf~
+    EVALUATE_BUFFER
 
 
 COPY ~Ishlilkamod/Portraits/IshyM.bmp~ ~override/IshyM.bmp~
@@ -277,11 +265,11 @@ COPY ~Ishlilkamod/Portraits/IshyS.bmp~ ~override/IshyS.bmp~
 
 
 APPEND ~pdialog.2da~
-~#Ishy IshyP IshyD bdishy~
+~#Ishy                  IshyP                  IshyD                  bdishy~
 UNLESS ~#Ishy~
 
 APPEND ~interdia.2da~
-~#Ishy BISHY~
+~#Ishy   BISHY~
 UNLESS ~#Ishy~
 
 ACTION_IF (FILE_EXISTS_IN_GAME ~BDBANTER.2DA~) BEGIN
@@ -328,7 +316,7 @@ VOGHILN  BDVOGHIB
 MKHIIN   BDMKHIIB
 CORWIN   BDCORWIB
 GLINT    BDGLINTB
-#ISHY    BISHY
+#ISHY    BDISHY
 >>>>>>>>
 
 	COPY ~.../ishy-inlined/BDBANTER.2DA~ ~override~ // copy the in-lined (memory-only) file we defined above into the override folder (as a real file)
@@ -336,5 +324,5 @@ GLINT    BDGLINTB
 END
 
 APPEND ~BDDialog.2DA~
-~#Ishy IshyP bdishy~
+~#Ishy           IshyP           bdishy~
 UNLESS ~#Ishy~

@@ -6,25 +6,14 @@
 
 BEGIN IshyD
 
-IF ~Global("P!ishbandits","AR1900",1)~ ishbandits
+IF ~Global("P!ishbandits","%BanditCamp%",1)~ ishbandits
 SAY @10000 /* Well, here we are. The hideout of the bandits that have been plaguing the region lately. They are bound to outnumber us, so we should approach with caution. */
 IF ~~ THEN EXIT
-END 
-
-IF ~Global("P!ishbandits","BG1900",1)~ ishbandits
-SAY @10000 /* Well, here we are. The hideout of the bandits that have been plaguing the region lately. They are bound to outnumber us, so we should approach with caution. */
-IF ~~ THEN EXIT
-END 
-
-IF ~Global("P!ishcandlekeep","AR2626",1)~ ishcandlekeep
-SAY @10001 /* So, this is your old home, huh? I'm glad I get to see it, even under these circumstances. Maybe one day i'll take you to my home. */ 
-IF ~~ THEN DO ~SetGlobal("P!ishcandlekeep","AR2626",2)~ 
-EXIT
 END
 
-IF ~Global("P!ishcandlekeep","BG2626",1)~ ishcandlekeep
+IF ~Global("P!ishcandlekeep","%Candlekeep_Ch6%",1)~ ishcandlekeep
 SAY @10001 /* So, this is your old home, huh? I'm glad I get to see it, even under these circumstances. Maybe one day i'll take you to my home. */ 
-IF ~~ THEN DO ~SetGlobal("P!ishcandlekeep","BG2626",2)~ 
+IF ~~ THEN DO ~SetGlobal("P!ishcandlekeep","%Candlekeep_Ch6%",2)~ 
 EXIT
 END
 
@@ -582,18 +571,11 @@ SAY @10194 /* You don't have to be rude about it. I'll pay you back by helping y
 IF ~~ THEN EXIT
 END
 
-IF ~Global("ishfinalfight","AR0123",1)~ THEN BEGIN ishfinalcountdown
+IF ~Global("ishfinalfight","%Undercity%",1)~ THEN BEGIN ishfinalcountdown
 SAY @10195 /* This is it. The man behind everything is finally in your grasp. */
-++ @10196 /* Yes. Finally I can avenge Gorion for that horrible night. Thank you for coming with me all this way, Ishlilka. */ DO ~SetGlobal("ishfinalfight","AR0123",2)~ + ishfinalcountdown1
-++ @10197 /* And I will make him scream in such agony the entire realms will hear it. */ DO ~SetGlobal("ishfinalfight","AR0123",2)~ + ishfinalcountdown2
-++ @10198 /* Please, Ishlilka, not now. I must clear my head and prepare. */  DO ~SetGlobal("ishfinalfight","AR0123",2)~ + ishfinalcountdown3
-END
-
-IF ~Global("ishfinalfight","BG0123",1)~ THEN BEGIN ishfinalcountdown
-SAY @10195 /* This is it. The man behind everything is finally in your grasp. */
-++ @10196 /* Yes. Finally I can avenge Gorion for that horrible night. Thank you for coming with me all this way, Ishlilka. */ DO ~SetGlobal("ishfinalfight","BG0123",2)~ + ishfinalcountdown1
-++ @10197 /* And I will make him scream in such agony the entire realms will hear it. */ DO ~SetGlobal("ishfinalfight","BGR0123",2)~ + ishfinalcountdown2
-++ @10198 /* Please, Ishlilka, not now. I must clear my head and prepare. */  DO ~SetGlobal("ishfinalfight","BG0123",2)~ + ishfinalcountdown3
+++ @10196 /* Yes. Finally I can avenge Gorion for that horrible night. Thank you for coming with me all this way, Ishlilka. */ DO ~SetGlobal("ishfinalfight","%Undercity%",2)~ + ishfinalcountdown1
+++ @10197 /* And I will make him scream in such agony the entire realms will hear it. */ DO ~SetGlobal("ishfinalfight","%Undercity%",2)~ + ishfinalcountdown2
+++ @10198 /* Please, Ishlilka, not now. I must clear my head and prepare. */  DO ~SetGlobal("ishfinalfight","%Undercity%",2)~ + ishfinalcountdown3
 END
 
 IF ~~ THEN BEGIN ishfinalcountdown1 

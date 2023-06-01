@@ -34,37 +34,20 @@ AddXPObject("#Ishy",7000)
 END
 
 IF
-Global("P!ishbandits","AR1900",0)
+Global("P!ishbandits","%BanditCamp%",0)
 InParty("Myself")
 THEN RESPONSE # 100
 StartDialogueNoSet(Player1)
-SetGlobal("P!ishbandits","AR1900",1)
+SetGlobal("P!ishbandits","%BanditCamp%",1)
 END
 
 IF
-Global("P!ishbandits","BG1900",0)
-InParty("Myself")
-THEN RESPONSE # 100
-StartDialogueNoSet(Player1)
-SetGlobal("P!ishbandits","BG1900",1)
-END
-
-IF
-Global("P!ishcandlekeep","AR2626",0)
+Global("P!ishcandlekeep","%Candlekeep_Ch6%",0)
 InParty("Myself")
 Global("Chapter","GLOBAL",6)
 THEN RESPONSE # 100
 StartDialogueNoSet(Player1)
-SetGlobal("P!ishcandlekeep","AR2626",1)
-END
-
-IF
-Global("P!ishcandlekeep","BG2626",0)
-InParty("Myself")
-Global("Chapter","GLOBAL",6)
-THEN RESPONSE # 100
-StartDialogueNoSet(Player1)
-SetGlobal("P!ishcandlekeep","BG2626",1)
+SetGlobal("P!ishcandlekeep","%Candlekeep_Ch6%",1)
 END
 
 
@@ -328,20 +311,11 @@ END
 // Dialogue upon reaching the Undercity
 
 IF
-Global("ishfinalfight","AR0123",0)
+Global("ishfinalfight","%Undercity%",0)
 !Global("IshyRomanceActive","GLOBAL",0)
 THEN
 RESPONSE #100
-SetGlobal("ishfinalfight","AR0123",1)
-StartDialogueNoSet(Player1)
-END
-
-IF
-Global("ishfinalfight","BG0123",0)
-!Global("IshyRomanceActive","GLOBAL",0)
-THEN
-RESPONSE #100
-SetGlobal("ishfinalfight","BG0123",1)
+SetGlobal("ishfinalfight","%Undercity%",1)
 StartDialogueNoSet(Player1)
 END
 
@@ -370,7 +344,7 @@ IF
     See([PC])
 	Global("endofbg1","GLOBAL",0)
     NumTimesTalkedTo(0)
-	Global("ishcutscene","AR2300",0)
+	Global("ishcutscene","%FriendlyArmInn%",0)
   THEN
     RESPONSE #100
       ClearAllActions()
@@ -393,37 +367,7 @@ IF
       ActionOverride(Player6,Face(6))
       ActionOverride("#Ishy",StartDialogueNoSet(Player1))
       EndCutSceneMode()
-	  SetGlobal("ishcutscene","AR2300",1)
-  END
-  
-IF
-    See([PC])
-	Global("endofbg1","GLOBAL",0)
-    NumTimesTalkedTo(0)
-	Global("ishcutscene","BG2300",0)
-  THEN
-    RESPONSE #100
-      ClearAllActions()
-      StartCutSceneMode()
-	  Face(14)
-      CutSceneId(Player1)
-      MoveViewPoint([1900.2000],VERY_FAST)
-      ActionOverride(Player1,MoveToPointNoInterrupt([1839.1936]))
-      ActionOverride(Player2,MoveToPointNoInterrupt([1780.1900]))
-      Swing()
-      ActionOverride(Player1,Face(6))
-      ActionOverride(Player2,Face(6))
-      ActionOverride(Player3,MoveToPointNoInterrupt([1740.1840]))
-      ActionOverride(Player4,MoveToPointNoInterrupt([1650.1815]))
-      ActionOverride(Player5,MoveToPointNoInterrupt([2000.1850]))
-      ActionOverride(Player6,MoveToPointNoInterrupt([2100.2100]))
-      ActionOverride(Player3,Face(10))
-      ActionOverride(Player4,Face(8))
-      ActionOverride(Player5,Face(6))
-      ActionOverride(Player6,Face(6))
-      ActionOverride("#Ishy",StartDialogueNoSet(Player1))
-      EndCutSceneMode()
-	  SetGlobal("ishcutscene","BG2300",1)
+	  SetGlobal("ishcutscene","%FriendlyArmInn%",1)
   END
  
 IF
