@@ -16,7 +16,7 @@ ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
 ReallyForceSpell(Myself,WIZARD_WEB)
 ReallyForceSpell(Myself,WIZARD_SPIDER_SPAWN)
 ReallyForceSpell(Myself,WIZARD_SPIDER_SPAWN)
-DisplayStringHead(Myself,~@20~) /*Ha ha ha ha ha!*/
+DisplayStringHead(Myself,@20) /*Ha ha ha ha ha!*/
 JumpToPoint([3297.2515])
 SetGlobal("falteriport","GLOBAL",1)
 END 
@@ -25,7 +25,7 @@ IF
 See([PC])
 Global("falteriport","GLOBAL",1)
 THEN RESPONSE #100
-DisplayStringHead(Myself,~@21~) /*Fool girl, you could never emulate the power of Argath!*/
+DisplayStringHead(Myself,@21) /*Fool girl, you could never emulate the power of Argath!*/
 SetGlobal("falteriport","GLOBAL",3)
 END
 
@@ -58,7 +58,7 @@ Global("ishsodwhodat","GLOBAL",0)
 THEN RESPONSE #100
 Spell(NearestEnemyof(Myself),WIZARD_GLITTERDUST)
 ReallyForceSpell(Myself,WIZARD_SPIDER_SPAWN)
-DisplayStringHead(Myself,~@22~) /*I will crush you like I crushed his brothers in arms!*/
+DisplayStringHead(Myself,@22) /*I will crush you like I crushed his brothers in arms!*/
 SetGlobal("ishsodwhodat","GLOBAL",1)
 END 
 

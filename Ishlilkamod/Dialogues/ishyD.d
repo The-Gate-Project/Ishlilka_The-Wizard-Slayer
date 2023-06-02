@@ -744,7 +744,7 @@ END
 
 IF ~~ THEN BEGIN ISHTID2
 SAY @10241 /* I'm not really one for gossip, but I suppose I can give you my opinion if you desire it. */
-IF ~InParty("Imoen")~ THEN REPLY @10242 /* What do you think of Imoen? */ + ishimmypid
+IF ~InParty("%IMOEN_DV%")~ THEN REPLY @10242 /* What do you think of Imoen? */ + ishimmypid
 IF ~InParty("Khalid")~ THEN REPLY @10243 /* What do you think of Khalid? */ + ishkhalpid
 IF ~InParty("Jaheira")~ THEN REPLY @10244 /* What do you think of Jaheira? */ + ishjapid
 IF ~InParty("Dorn")~ THEN REPLY @10245 /* What do you think of Dorn? */ + ishDornpid

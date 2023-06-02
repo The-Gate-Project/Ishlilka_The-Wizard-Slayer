@@ -6,11 +6,11 @@ IF ~InParty("#Ishy")
 InParty("Edwin")
 !StateCheck("Edwin",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("Ishdwin2","GLOBAL",0)~ THEN BEDWIN Ishdwin2
+Global("Ishdwin2","GLOBAL",0)~ THEN %EDWIN_BANTER% Ishdwin2
 @9500 /* Explain yourself, orc.  */
 DO ~SetGlobal("Ishdwin2","GLOBAL",1)~
 == BISHY @9501 /* What are you on about this time, Edwin? */
-== BEDWIN @9502 /* Don't play coy with me, girl. You are weak and pathetic mind could never aspire to cast even the simplest cantrip. So what are these magical protections you possess? (Yes, I will pry any information she has from her...) */
+== %EDWIN_BANTER% @9502 /* Don't play coy with me, girl. You are weak and pathetic mind could never aspire to cast even the simplest cantrip. So what are these magical protections you possess? (Yes, I will pry any information she has from her...) */
 == BISHY @9503 /* I don't know what you're talking about, and even if I did, I certainly wouldn't tell *you*. */
 EXIT
 
@@ -121,9 +121,9 @@ EXIT
 
 CHAIN
 IF ~InParty("#Ishy")
-InParty("IMOEN")
+InParty("%IMOEN_DV%")
 !Global("IshyRomanceActive","GLOBAL",0)
-!StateCheck("Imoen",CD_STATE_NOTVALID)
+!StateCheck("%IMOEN_DV%",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
 Global("IshyImoenR","GLOBAL",0)~ THEN BISHY IshyImoenR
 @9535 /* Imoen, can you tell me more about <CHARNAME>? What he was like, before all this started, I mean? */
@@ -137,9 +137,9 @@ EXIT
 
 CHAIN
 IF ~InParty("#Ishy")
-InParty("Imoen")
+InParty("%IMOEN_DV%")
 Global("IshyRomanceActive","GLOBAL",2)
-!StateCheck("Imoen",CD_STATE_NOTVALID)
+!StateCheck("%IMOEN_DV%",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
 Global("Ishyimoencharnametalk","GLOBAL",0)~ THEN BISHY IshyImoenR1
 @9541 /* Imoen, I need some advice... */
@@ -154,7 +154,7 @@ EXIT
 
 CHAIN
 IF ~InParty("#Ishy")
-InParty("IMOEN")
+InParty("%IMOEN_DV%")
 Global("IshyImoen1","GLOBAL",0)~ THEN BIMOEN IshyImoen1
 @9547 /* Heya Ishy! */
 == BISHY @9548 /* "Ishy?" */
@@ -230,11 +230,11 @@ IF ~InParty("#Ishy")
 InParty("Edwin")
 !StateCheck("Edwin",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyEdwin1","GLOBAL",0)~ THEN BEDWIN IshyEdwin1
+Global("IshyEdwin1","GLOBAL",0)~ THEN %EDWIN_BANTER% IshyEdwin1
 @9574 /* (Damn demi-human incompetent...) Excuse me, Ishlilka. Have you ever noticed that even mongrel specimens of orcs such as yourself excel in no other area except the most primitive forms of violence?  */
 DO ~SetGlobal("IshyEdwin1","GLOBAL",1)~
 == BISHY @9575 /* That's not true at all, Edwin. My mother once wielded divine magic well enough to match even your power. */
-== BEDWIN @9576 /* Oh, your mommy is it? Very intimidating, girl. (It's amazing her mother isn't some bumbling beast...) */
+== %EDWIN_BANTER% @9576 /* Oh, your mommy is it? Very intimidating, girl. (It's amazing her mother isn't some bumbling beast...) */
 EXIT
 
 CHAIN 
@@ -245,9 +245,9 @@ InParty("Edwin")
 Global("IshyEdwin2","GLOBAL",0)~ THEN BISHY IshyEdwin2
 @9577 /* If <CHARNAME> didn't suffer your company, i'd have taken you down by now.  */
 DO ~SetGlobal("IshyEdwin2","GLOBAL",1)~
-== BEDWIN @9578 /* Stow it, girl, and do not test my patience further. Your pathetic skills are nothing compared to mine. (I shall have to watch this one carefully...) */
+== %EDWIN_BANTER% @9578 /* Stow it, girl, and do not test my patience further. Your pathetic skills are nothing compared to mine. (I shall have to watch this one carefully...) */
 == BISHY @9579 /* Allow me to bear witness to your evil, and the red on your robes won't be from the fabric. */
-== BEDWIN @9580 /* Oh, very clever! As if every Red Wizard hasn't heard that one before. */
+== %EDWIN_BANTER% @9580 /* Oh, very clever! As if every Red Wizard hasn't heard that one before. */
 EXIT
 
 
@@ -256,12 +256,12 @@ CHAIN
 IF ~InParty("#Ishy")
 !StateCheck("Minsc",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyMinsc1","GLOBAL",0)~ THEN BMINSC IshyMinsc1
+Global("IshyMinsc1","GLOBAL",0)~ THEN %MINSC_BANTER% IshyMinsc1
 @9581 /* Ishlilka! You are a noble warrior indeed. See how Boo swells with pride in your presence?  */
 == BISHY @9582 /* Well, thank you Minsc. And you too, little Boo. */
-== BMINSC @9583 /* Have you ever considered becoming a ranger? Think of the benefits! You could have a miniature giant space hamster of your very own! */
+== %MINSC_BANTER% @9583 /* Have you ever considered becoming a ranger? Think of the benefits! You could have a miniature giant space hamster of your very own! */
 == BISHY @9584 /* That's certainly tempting, i'll admit. He's so cute! Aren't you, Boo?  */
-== BMINSC @9585 /* *squeak* */ 
+== %MINSC_BANTER% @9585 /* *squeak* */ 
 EXIT
 
 
@@ -534,7 +534,7 @@ CHAIN
 IF ~InParty("#Ishy")
 InParty("Skie")
 Global("IshySk99","GLOBAL",0)
-InParty("Imoen")
+InParty("%IMOEN_DV%")
 Global("IshySk9","GLOBAL",0)~ THEN BSKIE IshSK99
 @9671 /* You're so impressive in battle, Ishy. Like a real adventurer. I wish I was that brave. */ DO ~SetGlobal("IshySk99","GLOBAL",1)~
 == BISHY @9672 /* Now you too? Did you get that from Imoen? */
@@ -667,11 +667,11 @@ InParty("dorn")
 See("#Ishy")
 !StateCheck("dorn",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyDorn1","GLOBAL",0)~ THEN BDORN IshyDorn1
+Global("IshyDorn1","GLOBAL",0)~ THEN %DORN_BANTER% IshyDorn1
 @9709 /* Ishlilka, was it? You fight quite well for a woman, even an orc one. And you are quite attractive, besides. */
 DO ~SetGlobal("IshyDorn1","GLOBAL",1)~
 == BISHY @9710 /* You're a monster, Dorn, and I don't know why <CHARNAME> even allows you to stay.  */
-== BDORN @9711 /* He keeps me because I prove my worth, girl. As he keeps you. And I like it when they...struggle. */
+== %DORN_BANTER% @9711 /* He keeps me because I prove my worth, girl. As he keeps you. And I like it when they...struggle. */
 == BISHY @9712 /* *ugh!* */
 EXIT
 
@@ -681,13 +681,13 @@ InParty("neera")
 See("#Ishy")
 !StateCheck("neera",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyNer1","GLOBAL",0)~ THEN BNEERA IshyNer1
+Global("IshyNer1","GLOBAL",0)~ THEN %NEERA_BANTER% IshyNer1
 @9713 /* So, you're trained to hunt people like me, huh? */
 DO ~SetGlobal("IshyNer1","GLOBAL",1)~
 == BISHY @9714 /* Well...yes. I guess so. I hope you don't take it personally. I have nothing against mages, even wild ones. */
-== BNEERA @9715 /* Oh, don't worry, I don't. You wouldn't be the first to try to hunt me, trust me. */
+== %NEERA_BANTER% @9715 /* Oh, don't worry, I don't. You wouldn't be the first to try to hunt me, trust me. */
 == BISHY @9716 /* Really? But you seem so nice. */
-== BNEERA @9717 /* Well that doesn't matter much when you go on a wild surge and set half the town ablaze, but...ya know. */
+== %NEERA_BANTER% @9717 /* Well that doesn't matter much when you go on a wild surge and set half the town ablaze, but...ya know. */
 EXIT
 
 // sod version 
@@ -702,11 +702,11 @@ See("#Ishy")
 Global("IshyRas1","GLOBAL",0)~ THEN BISHY IshyRas1
 @9718 /* I've never seen anyone fight armed opponenets with their bare hands before. */
 DO ~SetGlobal("IshyRas1","GLOBAL",1)~
-== BRASAAD @9719 /* My art is not intended for violence. I seek perfection of the body, mind, and soul. But still, I thank you for the compliment. */
+== %RASAAD_BANTER% @9719 /* My art is not intended for violence. I seek perfection of the body, mind, and soul. But still, I thank you for the compliment. */
 == BISHY @9720 /* So what does that even mean, anyway? */
-== BRASAAD @9721 /* Well, in general, I practice my martial arts as a means as a means to achieve greater discipline, mental awareness, and as a means to spread the will of my godess Selune. Does that make more sense?  */
+== %RASAAD_BANTER% @9721 /* Well, in general, I practice my martial arts as a means as a means to achieve greater discipline, mental awareness, and as a means to spread the will of my godess Selune. Does that make more sense?  */
 == BISHY @9722 /* Well...I guess so. Thanks. */
-== BRASAAD @9723 /* Of course, Ishlilka. You may ask me more anytime. */
+== %RASAAD_BANTER% @9723 /* Of course, Ishlilka. You may ask me more anytime. */
 EXIT
 
 // sod version
@@ -767,11 +767,11 @@ IF ~InParty("#Ishy")
 InParty("dorn")
 Global("IshyRomanceActive","GLOBAL",2)
 Global("IshyDornRho","GLOBAL",0)
-!Race(Player1,HALFORC)~ THEN BDORN IshyDorn11
+!Race(Player1,HALFORC)~ THEN %DORN_BANTER% IshyDorn11
 @9735 /* So, you've taken to <CHARNAME> so quickly, have you? Have you no pride as an orc? */
 DO ~SetGlobal("IshyDornRho","GLOBAL",1)~
 == BISHY @9736 /* Have you no pride at all? Actions are worth far more than blood, Dorn.  */
-== BDORN @9737 /* So you say. But don't forget that many of his kind would see you dead just for being who you are. */
+== %DORN_BANTER% @9737 /* So you say. But don't forget that many of his kind would see you dead just for being who you are. */
 == BISHY @9738 /* He isn't one of them, and i'm sure you would see many of his kind in the same light. */
 EXIT
 
@@ -798,7 +798,7 @@ IF ~InParty("#Ishy")
 InParty("dorn")
 Global("IshyRomanceActive","GLOBAL",2)
 Global("IshyDornRho","GLOBAL",0)
-Race(Player1,HALFORC)~ THEN BDORN IshyDorn1
+Race(Player1,HALFORC)~ THEN %DORN_BANTER% IshyDorn1
 @9739 /* I concede that <CHARNAME> is a fine choice. The blood of an orc runs through him. That is enough. */
 DO ~SetGlobal("IshyDornRho","GLOBAL",1)~
 = @9740 /* Still, have you ever need of a real man, you know where to find me... */
@@ -830,11 +830,11 @@ InParty("dorn")
 !Global("IshyQuest","GLOBAL",0)
 Global("P!thisonesannoying","GLOBAL",0)
 !Global("IshyQuest","GLOBAL",1)
-~ THEN BDORN IshyDornQ
+~ THEN %DORN_BANTER% IshyDornQ
 @9742 /* How did it feel, girl? */
 == BISHY @9743 /* How did *what* feel, Dorn? */
 DO ~SetGlobal("P!thisonesannoying","GLOBAL",1)~
-== BDORN @9744 /* Hunting your hapless prey, of course. Letting him drown in a pool of his own blood. Satisfying, is it not? */
+== %DORN_BANTER% @9744 /* Hunting your hapless prey, of course. Letting him drown in a pool of his own blood. Satisfying, is it not? */
 == BISHY @9745 /* Satisfying that justice was done, maybe. Not in the bloodshed. Not leave me be. */
 EXIT
 
@@ -1264,7 +1264,7 @@ END DENAK 2
 
 INTERJECT_COPY_TRANS WINTHR2 2 ishhiwinthrop
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")
-!InParty("Imoen")
+!InParty("%IMOEN_DV%")
 Global("IshyRomanceActive","GLOBAL",2)~ THEN
  @9829 /* Hello there! Winthrop, was it? I'm Ishlilka. <CHARNAME>'s...well, <CHARNAME>'s friend. */
 == WINTHR2 IF ~IsValidForPartyDialogue("#Ishy")~ THEN @9830 /* Picked yerself up a little girlie, did ye? I should have expected! */ DO ~StartStore("Inn2616",LastTalkedToBy(Myself))~
@@ -1272,7 +1272,7 @@ END
 
 INTERJECT_COPY_TRANS WINTHR2 5 ishhiwinthrop
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")
-!InParty("Imoen")
+!InParty("%IMOEN_DV%")
 Global("IshyRomanceActive","GLOBAL",2)~ THEN
  @9829 /* Hello there! Winthrop, was it? I'm Ishlilka. <CHARNAME>'s...well, <CHARNAME>'s friend. */
 == WINTHR2 IF ~IsValidForPartyDialogue("#Ishy")~ THEN @9830 /* Picked yerself up a little girlie, did ye? I should have expected! */ DO ~StartStore("Inn2616",LastTalkedToBy(Myself))~
@@ -1280,7 +1280,7 @@ END
 
 INTERJECT_COPY_TRANS WINTHR2 6 ishhiwinthrop
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")
-!InParty("Imoen")
+!InParty("%IMOEN_DV%")
 Global("IshyRomanceActive","GLOBAL",2)~ THEN
  @9829 /* Hello there! Winthrop, was it? I'm Ishlilka. <CHARNAME>'s...well, <CHARNAME>'s friend. */
 == WINTHR2 IF ~IsValidForPartyDialogue("#Ishy")~ THEN @9830 /* Picked yerself up a little girlie, did ye? I should have expected! */ DO ~StartStore("Inn2616",LastTalkedToBy(Myself))~
@@ -1288,7 +1288,7 @@ END
 
 INTERJECT_COPY_TRANS WINTHR2 5 ishhiwinthrop
 == BIMOEN IF ~IsValidForPartyDialogue("#Ishy")
-InParty("Imoen")~ THEN
+InParty("%IMOEN_DV%")~ THEN
 @9831 /* And this here is Ishy! */ 
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN @9832 /* Uh, yes. Hi there, Winthrop. Imoen has told me a lot about you. */
 == WINTHR2 IF ~IsValidForPartyDialogue("#Ishy")~ THEN @9833 /* Ah, a good thing to see the little girl makin' friends, it is. */ DO ~StartStore("Inn2616",LastTalkedToBy(Myself))~
@@ -1296,7 +1296,7 @@ END
 
 INTERJECT_COPY_TRANS WINTHR2 2 ishhiwinthrop
 == BIMOEN IF ~IsValidForPartyDialogue("#Ishy")
-InParty("Imoen")~ THEN
+InParty("%IMOEN_DV%")~ THEN
 @9831 /* And this here is Ishy! */
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN @9832 /* Uh, yes. Hi there, Winthrop. Imoen has told me a lot about you. */
 == WINTHR2 IF ~IsValidForPartyDialogue("#Ishy")~ THEN @9833 /* Ah, a good thing to see the little girl makin' friends, it is. */ DO ~StartStore("Inn2616",LastTalkedToBy(Myself))~
@@ -1304,7 +1304,7 @@ END
 
 INTERJECT_COPY_TRANS WINTHR2 6 ishhiwinthrop
 == BIMOEN IF ~IsValidForPartyDialogue("#Ishy")
-InParty("Imoen")~ THEN
+InParty("%IMOEN_DV%")~ THEN
 @9831 /* And this here is Ishy! */
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN @9832 /* Uh, yes. Hi there, Winthrop. Imoen has told me a lot about you. */
 == WINTHR2 IF ~IsValidForPartyDialogue("#Ishy")~ THEN @9833 /* Ah, a good thing to see the little girl makin' friends, it is. */ DO ~StartStore("Inn2616",LastTalkedToBy(Myself))~
@@ -1313,7 +1313,7 @@ END
 
 INTERJECT_COPY_TRANS WINTHR2 3 ishhiwinthrop
 == BIMOEN IF ~IsValidForPartyDialogue("#Ishy")
-InParty("Imoen")~ THEN
+InParty("%IMOEN_DV%")~ THEN
 @9831 /* And this here is Ishy! */
 == BISHY @9832 /* Uh, yes. Hi there, Winthrop. Imoen has told me a lot about you. */
 == WINTHR2 @9833 /* Ah, a good thing to see the little girl makin' friends, it is. */ DO ~StartStore("Inn2616",LastTalkedToBy(Myself))~
@@ -1321,7 +1321,7 @@ END
 
 INTERJECT_COPY_TRANS WINTHR2 3 ishhiwinthrop
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")
-!InParty("Imoen")
+!InParty("%IMOEN_DV%")
 Global("IshyRomanceActive","GLOBAL",2)~ THEN
  @9829 /* Hello there! Winthrop, was it? I'm Ishlilka. <CHARNAME>'s...well, <CHARNAME>'s friend. */
 == WINTHR2 IF ~IsValidForPartyDialogue("#Ishy")~ THEN @9830 /* Picked yerself up a little girlie, did ye? I should have expected! */ DO ~StartStore("Inn2616",LastTalkedToBy(Myself))~

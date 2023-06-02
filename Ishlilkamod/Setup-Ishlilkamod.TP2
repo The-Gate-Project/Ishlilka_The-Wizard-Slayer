@@ -2,7 +2,6 @@ BACKUP ~Ishlilkamod/backup~
 AUTHOR ~Damian Warneke (WarChiefZeke @ baldurs gate forums or Gibberlings 3)~
 README ~Ishlilkamod/README.%LANGUAGE%.txt~ ~Ishlilkamod/README.txt~
 
-
 ALWAYS
 	ACTION_DEFINE_ARRAY Ad_reload BEGIN
 	"Setup.tra"
@@ -177,49 +176,27 @@ SAY NAME1 @544 /* "Crusader" */
 
 COMPILE ~Ishlilkamod/Dialogues/BDMKHIIB.d~
 
-
-
 COMPILE ~Ishlilkamod/Dialogues/BDCORWIB.d~
-
-
-
 
 COMPILE ~Ishlilkamod/Dialogues/BDSAFANB.d~
 
-
-
 COMPILE ~Ishlilkamod/Dialogues/BDGARRIB.d~
-
-
 
 COMPILE ~Ishlilkamod/Dialogues/BDRASAAB.d~
 
-
-
-
 COMPILE ~Ishlilkamod/Dialogues/BDMINSCB.d~
-
 
 COMPILE ~Ishlilkamod/Dialogues/BDDYNAHB.d~
 
-
 COMPILE ~Ishlilkamod/Dialogues/BDVICONB.d~
-
-
 
 COMPILE ~Ishlilkamod/Dialogues/BDVOGHIB.d~
 
-
-
 COMPILE ~Ishlilkamod/Dialogues/BDVICONB.d~
-
 
 COMPILE ~Ishlilkamod/Dialogues/BDNEERAB.d~
 
-
 COMPILE ~Ishlilkamod/Dialogues/BDGLINTB.d~
-
-
 
 COMPILE ~Ishlilkamod/Dialogues/BDDORNB.d~
 
@@ -230,8 +207,8 @@ COMPILE ~Ishlilkamod/Dialogues/BDDORNB.d~
 
 COMPILE ~Ishlilkamod/Dialogues/ishyP.d~
 COMPILE EVALUATE_BUFFER ~Ishlilkamod/Dialogues/IshyD.d~
-COMPILE ~Ishlilkamod/Dialogues/BISHY.d~
-COMPILE ~Ishlilkamod/Dialogues/ishyhi.d~
+COMPILE EVALUATE_BUFFER ~Ishlilkamod/Dialogues/BISHY.d~
+COMPILE EVALUATE_BUFFER ~Ishlilkamod/Dialogues/ishyhi.d~
 COMPILE ~Ishlilkamod/Dialogues/JuleskD.d~
 COMPILE ~Ishlilkamod/Dialogues/bdishy.d~
 COMPILE ~Ishlilkamod/Dialogues/FalteriD.d~
@@ -242,8 +219,7 @@ COMPILE ~Ishlilkamod/Dialogues/FalteriD.d~
 
 // Compiling scripts
 
-COMPILE ~Ishlilkamod/Scripts/ishyscrp.baf~
-    EVALUATE_BUFFER
+COMPILE EVALUATE_BUFFER ~Ishlilkamod/Scripts/ishyscrp.baf~
 COMPILE ~Ishlilkamod/Scripts/ishquest.baf~
 COMPILE ~Ishlilkamod/Scripts/Juleskspells.baf~
 COMPILE ~Ishlilkamod/Scripts/faltwar.baf~
@@ -259,17 +235,20 @@ EXTEND_TOP ~BD5000.bcs~ ~Ishlilkamod/Scripts/BD5000.baf~
     EVALUATE_BUFFER
 
 
+// Portraits
+
 COPY ~Ishlilkamod/Portraits/IshyM.bmp~ ~override/IshyM.bmp~
 COPY ~Ishlilkamod/Portraits/IshyS.bmp~ ~override/IshyS.bmp~
 
 
+//Dialogue
 
 APPEND ~pdialog.2da~
-~#Ishy                  IshyP                  IshyD                  bdishy~
+~#Ishy 	IshyP 	IshyD 	bdishy~
 UNLESS ~#Ishy~
 
 APPEND ~interdia.2da~
-~#Ishy   BISHY~
+~#Ishy 	BISHY~
 UNLESS ~#Ishy~
 
 ACTION_IF (FILE_EXISTS_IN_GAME ~BDBANTER.2DA~) BEGIN

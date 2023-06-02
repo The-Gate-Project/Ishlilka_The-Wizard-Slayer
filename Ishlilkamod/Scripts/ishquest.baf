@@ -58,7 +58,7 @@ See(NearestEnemyof(Myself))
 THEN
 RESPONSE #100
 ReallyForceSpell(NearestEnemyof(Myself),WIZARD_HORROR)
-DisplayStringHead(Player1,~@10~) /*(Juleska looks drained after casting that last spell. Perhaps now you should finish him off.)*/
+DisplayStringHead(Player1,@10) /*(Juleska looks drained after casting that last spell. Perhaps now you should finish him off.)*/
 Wait(16)
 Continue()
 END
