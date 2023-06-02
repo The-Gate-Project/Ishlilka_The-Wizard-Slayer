@@ -248,9 +248,15 @@ COPY ~Ishlilkamod/Portraits/IshyS.bmp~ ~override/IshyS.bmp~
 
 //Dialogue
 
-APPEND ~pdialog.2da~
-~#Ishy 	IshyP 	IshyD 	bdishy~
-UNLESS ~#Ishy~
+ACTION_IF (GAME_IS ~eet~) BEGIN
+  APPEND ~pdialog.2da~
+  ~#Ishy 	IshyP 	IshyD 	bdishy  ****  ****  ****  ****~
+  UNLESS ~#Ishy~
+END ELSE BEGIN
+  APPEND ~pdialog.2da~
+  ~#Ishy 	IshyP 	IshyD 	bdishy~
+  UNLESS ~#Ishy~
+END
 
 APPEND ~interdia.2da~
 ~#Ishy 	BISHY~
@@ -308,5 +314,5 @@ GLINT    BDGLINTB
 END
 
 APPEND ~BDDialog.2DA~
-~#Ishy           IshyP           bdishy~
+~#Ishy           IshyP           bdishy ****~
 UNLESS ~#Ishy~
