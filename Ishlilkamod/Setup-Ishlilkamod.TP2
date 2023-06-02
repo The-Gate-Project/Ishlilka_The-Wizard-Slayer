@@ -150,22 +150,27 @@ Weight: 6 */
 
 COPY ~Ishlilkamod/Characters/JULESKA.cre~ ~override/JULESKA.cre~
  SAY NAME1 @542 /* Juleska */
+ SAY NAME2 @542 /* Juleska */
     ADD_CRE_ITEM ~POTN10~ #0 #0 #0 ~IDENTIFIED~ ~INV4~ 
 	
 	
 COPY ~Ishlilkamod/Characters/Falteri.cre~ ~override/Falteri.cre~
-SAY NAME1 @543 /* Falterion */ 
+SAY NAME1 @543 /* Falterion */
+SAY NAME2 @543 /* Falterion */ 
 
 
 COPY ~Ishlilkamod/Characters/fakecrus.cre~ ~override/fakecrus.cre~
 SAY NAME1 @544 /* "Crusader" */ 
+SAY NAME2 @544 /* "Crusader" */
 
 
 COPY ~Ishlilkamod/Characters/Khanji.cre~ ~override/Khanji.cre~
 SAY NAME1 @545 /* "Khanji" */ 
+SAY NAME2 @545 /* "Khanji" */
 
 COPY ~Ishlilkamod/Characters/fakcrus2.cre~ ~override/fakcrus2.cre~
 SAY NAME1 @544 /* "Crusader" */ 
+SAY NAME2 @544 /* "Crusader" */
 
  
 ///////////////////////

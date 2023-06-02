@@ -1,7 +1,7 @@
 IF 
 Dead("Tarnesh")
 See([PC])
-InParty("Myself")
+InParty(Myself)
 Global("Ishtarnesh","GLOBAL",0)
 THEN RESPONSE #100
 SetGlobal("Ishtarnesh","GLOBAL",1)
@@ -9,7 +9,7 @@ END
 
 IF 
 Global("endofbg1","GLOBAL",1)
-InParty("Myself")
+InParty(Myself)
 Global("IshyFistHelp","GLOBAL",0)
 Global("Chapter","GLOBAL",7)
 THEN RESPONSE #100
@@ -26,7 +26,7 @@ StartDialogueNoSet(Player1)
 END 
 
 IF
-InParty("Myself")
+InParty(Myself)
 LevelGT(Player1,4)
 LevelLT(Myself,4)
 THEN RESPONSE #100
@@ -35,7 +35,7 @@ END
 
 IF
 Global("P!ishbandits","%BanditCamp%",0)
-InParty("Myself")
+InParty(Myself)
 THEN RESPONSE # 100
 StartDialogueNoSet(Player1)
 SetGlobal("P!ishbandits","%BanditCamp%",1)
@@ -43,7 +43,7 @@ END
 
 IF
 Global("P!ishcandlekeep","%Candlekeep_Ch6%",0)
-InParty("Myself")
+InParty(Myself)
 Global("Chapter","GLOBAL",6)
 THEN RESPONSE # 100
 StartDialogueNoSet(Player1)
