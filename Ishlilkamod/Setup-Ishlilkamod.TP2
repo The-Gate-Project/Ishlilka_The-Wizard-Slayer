@@ -250,7 +250,7 @@ COPY ~Ishlilkamod/Portraits/IshyS.bmp~ ~override/IshyS.bmp~
 
 ACTION_IF (GAME_IS ~eet~) BEGIN
   APPEND ~pdialog.2da~
-  ~#Ishy 	IshyP 	IshyD 	bdishy  ****  ****  ****  ****~
+  ~#Ishy  IshyP  IshyD  bdishy  ****  ****  ****  ****~
   UNLESS ~#Ishy~
 END ELSE BEGIN
   APPEND ~pdialog.2da~
@@ -306,7 +306,7 @@ VOGHILN  BDVOGHIB
 MKHIIN   BDMKHIIB
 CORWIN   BDCORWIB
 GLINT    BDGLINTB
-#ISHY    BDISHY
+#ISHY    BISHY
 >>>>>>>>
 
 	COPY ~.../ishy-inlined/BDBANTER.2DA~ ~override~ // copy the in-lined (memory-only) file we defined above into the override folder (as a real file)
@@ -314,5 +314,5 @@ GLINT    BDGLINTB
 END
 
 APPEND ~BDDialog.2DA~
-~#Ishy           IshyP           bdishy ****~
+~#Ishy 	IshyP 	bdishy 	****~
 UNLESS ~#Ishy~

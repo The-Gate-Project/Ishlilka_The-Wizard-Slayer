@@ -36,18 +36,18 @@ END
 IF
 Global("P!ishbandits","%BanditCamp%",0)
 InParty(Myself)
-THEN RESPONSE # 100
-StartDialogueNoSet(Player1)
+THEN RESPONSE #100
 SetGlobal("P!ishbandits","%BanditCamp%",1)
+StartDialogueNoSet(Player1)
 END
 
 IF
 Global("P!ishcandlekeep","%Candlekeep_Ch6%",0)
 InParty(Myself)
 Global("Chapter","GLOBAL",6)
-THEN RESPONSE # 100
-StartDialogueNoSet(Player1)
+THEN RESPONSE #100
 SetGlobal("P!ishcandlekeep","%Candlekeep_Ch6%",1)
+StartDialogueNoSet(Player1)
 END
 
 
@@ -247,6 +247,7 @@ Global("IshyTalk","GLOBAL",2)
 Global("IshyTalk","GLOBAL",4)
 Global("IshyTalk","GLOBAL",6)
 Global("IshyTalk","GLOBAL",8)
+Global("IshyTalk","GLOBAL",10)
 THEN
 RESPONSE #100
 StartDialogueNoSet(Player1)
@@ -279,8 +280,8 @@ IF
 Dead("Falteri")
 THEN RESPONSE #100
 SetGlobal("IshyTalk","GLOBAL",8)
-StartDialogueNoSet(Player1)
 SetGlobal("IshyQuest","GLOBAL",9)
+StartDialogueNoSet(Player1)
 END 
 
 
@@ -330,8 +331,8 @@ Global("stahp","GLOBAL",0)
 THEN
 RESPONSE #100
 SetGlobal("IshyQuest","GLOBAL",4)
-StartDialogueNoSet(Player1)
 SetGlobal("stahp","GLOBAL",1)
+StartDialogueNoSet(Player1)
 END
 
 
@@ -413,8 +414,8 @@ Global("Ishtrollcave","BD0062",0)
 CombatCounter(0)
 !See([ENEMY])
 THEN RESPONSE #100
-StartDialogueNoSet(Player1)
 SetGlobal("Ishtrollcave","BD0062",1)
+StartDialogueNoSet(Player1)
 END 
 
 IF
@@ -422,8 +423,8 @@ Global("Ishtrollcave2","BD7110",0)
 CombatCounter(0)
 !See([ENEMY])
 THEN RESPONSE #100
-StartDialogueNoSet(Player1)
 SetGlobal("Ishtrollcave2","BD7110",1)
+StartDialogueNoSet(Player1)
 END 
 
 

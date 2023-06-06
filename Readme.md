@@ -59,3 +59,4 @@ v1.4: Ishlilka mod for BGSoD and EET
 - Correct ishyscrp.baf..... InParty("Myself") to InParty(Myself)
 - Correct Falteri.cre. Missing script name
 - Fix dialog 2da coloumn counts for EET, thanks to GraionDilach
+- Correct ishyscrp.baf
