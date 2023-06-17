@@ -327,7 +327,7 @@ UNLESS ~#Ishy~
 BEGIN @547 /* Deactivate first meeting cutscene */
 DESIGNATED 547
 LABEL ~WarChiefZeke-Ishlilka-NoCutscene~
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~SETUP-ISHLILKAMOD.TP2~ ~0~) @549 /* Component Ishlilka mod for BGSoD and EET is required */
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~SETUP-ISHLILKAMOD.TP2~ ~500~) @549 /* Component Ishlilka mod for BGSoD and EET is required */
 
 // No cutscene for first meeting
 
