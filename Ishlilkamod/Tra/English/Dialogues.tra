@@ -823,8 +823,7 @@
 @11004 = ~Thank you for your kindness. Sometimes that is hard to find when you...well, when you look like me. I'm Ishlilka Groshnak. A warrior, out here testing my skills.~
 @11005 = ~A warrior, you say? We have need of one in our company, if you are interested. And besides, these bandits might be hard to take on alone. ~
 @11006 = ~You're quite well spoken for a half orc, you know.~
-@11007 = ~You want me to...go with you? I never thought someone would ask me that. Well...sure.~ ~SetGlobal("IshyJoined", "LOCALS",1)
-JoinParty()~
+@11007 = ~You want me to...go with you? I never thought someone would ask me that. Well...sure.~
 @11008 = ~Oh. Um...alright.~
 @11009 = ~Well, I suppose it is a bit dangerous. Still, i'm not a normal warrior anyway. I'm...special. In a way.~
 @11010 = ~Well if you want practice in battle, you would surely find it in our company.~

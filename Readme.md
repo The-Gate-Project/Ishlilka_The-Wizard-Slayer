@@ -16,7 +16,7 @@ Baldur's Gate: EE+ SoD and the Enhanced Edition Trilogy (EET).
 ## Description:
 --------------
 
-Ishlilka is a Wizard Slayer kit who can be found at the Friendly Arm Inn just north of the entrance.  
+Ishlilka is a Wizard Slayer who can be found at the Friendly Arm Inn just north of the entrance.  
 
 She is good aligned and gets on best with good aligned characters such as 
 Garrick, Imoen, and Alora. She has *no party conflicts* but will express her displeasure with evil characters.  
@@ -41,6 +41,20 @@ Run Setup-Ishlilkamod.exe
 Follow the prompt
 
 
+## Components:
+--------------
+
+- 1. Ishlilka mod for BGSoD and EET
+
+Install the joingnable NPC Ishlika the Wizard Slayer.
+
+
+- 2. Deactivate first meeting cutscene 
+
+This component is NOT RECOMMENDED, it deactivates the forced cutscene for the first meeting at the Friendly Arm Inn nd allows you to initiate the discussion yourself.
+
+
+
 ## Version History:
 ------------------
 
@@ -60,3 +74,8 @@ v1.4: Ishlilka mod for BGSoD and EET
 - Correct Falteri.cre. Missing script name
 - Fix dialog 2da coloumn counts for EET, thanks to GraionDilach
 - Correct ishyscrp.baf
+- I!QSPR.itm no more a critical item
+- Add DLCmerger check
+- Add InfinityAutoPackager
+- Add metadata and label for Project Infinity
+- New component Deactivate Cutscene For Ishilka first meeting

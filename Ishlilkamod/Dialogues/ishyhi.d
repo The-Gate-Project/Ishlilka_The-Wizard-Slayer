@@ -17,9 +17,9 @@ IF ~Global("ishhiJOnotnow","GLOBAL",1)
 !Global("ishhiJOnotnow","GLOBAL",2)
 Global("endofbg1","GLOBAL",0)~ DelayedMeeting
 SAY @11000 /* Well, hello there. I can tell from your decent equipment you're not the bandits I am after. Might I ask your name? */ 
-++ @11001 /* I am <CHARNAME>. Pleased to meet you. */ + ishhiniceguy
-IF ~InParty("%IMOEN_DV%")~ THEN REPLY @10503 /* I am <CHARNAME>, and this is Imoen. Pleased to meet you.  */ + ishhiniceguy2
-++ @11002 /* Are you alone? Hunting a large group by yourself isn't wise. */ + ishconcern
+++ @11001 /* I am <CHARNAME>. Pleased to meet you. */ DO ~IncrementGlobal("ishhiJOnotnow","GLOBAL",1)~ + ishhiniceguy
+IF ~InParty("%IMOEN_DV%")~ THEN REPLY @10503 /* I am <CHARNAME>, and this is Imoen. Pleased to meet you.  */ DO ~IncrementGlobal("ishhiJOnotnow","GLOBAL",1)~ + ishhiniceguy2
+++ @11002 /* Are you alone? Hunting a large group by yourself isn't wise. */ DO ~IncrementGlobal("ishhiJOnotnow","GLOBAL",1)~ + ishconcern
 ++ @11003 /* I don't have time for this. */ + ishhifuckoff
 END
 
