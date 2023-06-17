@@ -1,6 +1,6 @@
 IF
 Global("IshyQuest", "GLOBAL",2)
-Global("doit","GLOBAL",0)
+Global("Ishydoit","GLOBAL",0)
 THEN
     RESPONSE #100
 CreateCreature("Juleska",[600.1400],7)
@@ -14,6 +14,6 @@ CreateCreature("HOBGOBA",[439.1172],7)
 CreateCreature("HOBGOBA",[464.1256],7)
 CreateCreature("HOBGOBA",[451.1280],7)
 CreateCreature("HOBGOBA",[525.1322],7)
-SetGlobal("doit","GLOBAL",1)
+SetGlobal("Ishydoit","GLOBAL",1)
         Continue()
 END

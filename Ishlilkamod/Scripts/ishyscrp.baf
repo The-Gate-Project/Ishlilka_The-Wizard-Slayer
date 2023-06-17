@@ -75,10 +75,10 @@ END
 IF
 Global("IshyQuest","GLOBAL",2)
 See([PC])
-Global("thehuntbegins","GLOBAL",0)
+Global("Ishyhuntbegins","GLOBAL",0)
 !Global("endofbg1","GLOBAL",1)
 THEN RESPONSE #100
-SetGlobal("thehuntbegins","GLOBAL",1)
+SetGlobal("Ishyhuntbegins","GLOBAL",1)
 AddJournalEntry(@30,QUEST) /*Mage Huntress Extraordinaire
 
 Ishlilka has told me her real reason for coming here was to hunt down a rogue mage known as Juleska, who escaped capture by her father's mercenaries. She believes he may be gathering forces to the far west of Nashkel.*/
@@ -327,11 +327,11 @@ See ([PC])
 Dead("Juleska")
 CombatCounter(0)
 !See([ENEMY])
-Global("stahp","GLOBAL",0)
+Global("Ishstahp","GLOBAL",0)
 THEN
 RESPONSE #100
 SetGlobal("IshyQuest","GLOBAL",4)
-SetGlobal("stahp","GLOBAL",1)
+SetGlobal("Ishstahp","GLOBAL",1)
 StartDialogueNoSet(Player1)
 END
 

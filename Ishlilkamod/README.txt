@@ -68,3 +68,4 @@ v1.4: Ishlilka mod for BGSoD and EET
 - Add InfinityAutoPackager
 - Add metadata and label for Project Infinity
 - New component Deactivate Cutscene For Ishilka first meeting
+- Add a new reply option for the first meeting that allows Ishilka's integration into the group to be delayed once
