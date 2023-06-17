@@ -338,7 +338,7 @@ END
 
 
 //Sleepy outdoor adventure conversations 
-
+/*
 // Intro cutscene
 
 IF
@@ -370,6 +370,7 @@ IF
       EndCutSceneMode()
 	  SetGlobal("ishcutscene","%FriendlyArmInn%",1)
   END
+*/
  
 IF
 Global("P!beginthesiege","BD0120",0)

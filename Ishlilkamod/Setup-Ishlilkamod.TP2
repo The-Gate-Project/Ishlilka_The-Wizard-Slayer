@@ -3,8 +3,12 @@ AUTHOR ~Damian Warneke (WarChiefZeke @ baldurs gate forums or Gibberlings 3)~
 README ~Ishlilkamod/README.%LANGUAGE%.txt~ ~Ishlilkamod/README.txt~
 
 ALWAYS
+
+	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
+	FAIL @546 END // DLC Merger
+
 	ACTION_DEFINE_ARRAY Ad_reload BEGIN
-	"Setup.tra"
+	~Setup.tra~
 	END
 	ACTION_DEFINE_ARRAY Ad_noconvert BEGIN END
 		LAF HANDLE_CHARSETS
@@ -27,7 +31,9 @@ LANGUAGE ~English~
 		 ~Ishlilkamod/Tra/English/Dialogues.tra~
 
 BEGIN @500 /* Ishlilka mod for BGSoD and EET */
-REQUIRE_PREDICATE GAME_IS ~bgee eet~ ~Ishlilka must be installed on BGEE or EET~
+DESIGNATED 500
+LABEL ~WarChiefZeke-Ishlilka~
+REQUIRE_PREDICATE GAME_IS ~bgee eet~ @548 /* Ishlilka must be installed on BGEE or EET */
 
 APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
   ~0x80101FEF CD_STATE_NOTVALID~
@@ -316,3 +322,13 @@ END
 APPEND ~BDDialog.2DA~
 ~#Ishy 	IshyP 	bdishy 	****~
 UNLESS ~#Ishy~
+
+
+BEGIN @547 /* Deactivate first meeting cutscene */
+DESIGNATED 547
+LABEL ~WarChiefZeke-Ishlilka-NoCutscene~
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~SETUP-ISHLILKAMOD.TP2~ ~500~) @549 /* Component Ishlilka mod for BGSoD and EET is required */
+
+// No cutscene for first meeting
+
+COMPILE EVALUATE_BUFFER ~Ishlilkamod/Scripts/cutcutscene/ishyscrp.baf~

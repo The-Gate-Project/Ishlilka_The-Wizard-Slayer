@@ -18,7 +18,8 @@ IF ~~ THEN REPLY @11006 /* You're quite well spoken for a half orc, you know. */
 END
 
 IF ~~ THEN BEGIN ishjoin
-SAY @11007 /* You want me to...go with you? I never thought someone would ask me that. Well...sure. */
+SAY @11007 /* You want me to...go with you? I never thought someone would ask me that. Well...sure. */ ~SetGlobal("IshyJoined", "LOCALS",1)
+JoinParty()~
 END
 
 IF ~~ THEN BEGIN ishhifuckoff
