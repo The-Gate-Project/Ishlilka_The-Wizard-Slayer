@@ -25,6 +25,7 @@ THEN RESPONSE #100
 StartDialogueNoSet(Player1)
 END 
 
+/*
 IF
 InParty(Myself)
 LevelGT(Player1,4)
@@ -32,6 +33,7 @@ LevelLT(Myself,4)
 THEN RESPONSE #100
 AddXPObject("#Ishy",7000) 
 END
+*/
 
 IF
 Global("P!ishbandits","%BanditCamp%",0)
@@ -88,9 +90,9 @@ END
 IF
 Global("IshyQuest","GLOBAL",5)
 See([PC])
-Global("killedthejfucker","GLOBAL",0)
+Global("Ishkillthejfucker","GLOBAL",0)
 THEN RESPONSE #100
-SetGlobal("killedthejfucker","GLOBAL",1)
+SetGlobal("Ishkillthejfucker","GLOBAL",1)
 AddJournalEntry(@31,QUEST_DONE) /*Mage Huntress Extraordinaire
 
 I was successful in aiding Ishlilka against the criminal mage Juleska and his new party. In return she has promised to serve me until I avenge my father, and she seems quite pleased.*/

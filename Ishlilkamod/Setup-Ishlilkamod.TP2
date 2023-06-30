@@ -1,6 +1,6 @@
 BACKUP ~Ishlilkamod/backup~
 AUTHOR ~Damian Warneke (WarChiefZeke @ baldurs gate forums or Gibberlings 3)~
-README ~Ishlilkamod/README.%LANGUAGE%.txt~ ~Ishlilkamod/README.txt~
+README ~Ishlilkamod/Readme/README.%LANGUAGE%.txt~ ~Ishlilkamod/Readme/README.English.txt~
 
 ALWAYS
 
@@ -67,9 +67,9 @@ COPY ~Ishlilkamod/Characters/#Ishy.cre~ ~override/#Ishy.cre~
  SAY BATTLE_CRY3 @510 /* My resolve is set! */
  SAY HURT @511 /* Enough of this disgrace...i'll redeem myself now! */
  SAY DYING @512 /* Father...i'm sorry... */
- SAY DAMAGE ~~ 
+ WRITE_LONG DAMAGE (BNOT 0x0) 
  SAY AREA_FOREST @514 /* The scenery is nice, but shouldn't be push on? */ 
- SAY AREA_CITY ~~ 
+ WRITE_LONG AREA_CITY (BNOT 0x0) 
  SAY AREA_DUNGEON @515 /* I have a bad feeling... */
  SAY AREA_DAY @516 /* What a beautiful day. */ 
  SAY AREA_NIGHT @517 /* Let's keep on alert. Who knows what could sneak up on us. */ 
@@ -79,8 +79,28 @@ COPY ~Ishlilkamod/Characters/#Ishy.cre~ ~override/#Ishy.cre~
   SAY SELECT_ACTION1 @521 /* I agree. */
   SAY SELECT_ACTION2 @522 /* Leave it to me. */
   SAY SELECT_ACTION3 @523 /* Very well. Leave the rest to me. */
+  
+//  SELECT_ACTION4/5/6/7 need special handling for BGEE !!! Other examples in setup-ChaosKnight.tp2 and setup-BG1Aerie.tp2
+
+  PATCH_IF (GAME_IS ~bgee~) BEGIN
+   // BGEE_SELECT_ACTION4
+  WRITE_LONG SELECT_ACTION4 (BNOT 0x0)
+  SAY 0x1E0 @524 /* Well then! Let's go! */
+   // BGEE_SELECT_ACTION5 
+  WRITE_LONG SELECT_ACTION5 (BNOT 0x0)
+  SAY 0x1E4 @525 /* Now, shall we get started? */
+END ELSE BEGIN
   SAY SELECT_ACTION4 @524 /* Well then! Let's go! */
   SAY SELECT_ACTION5 @525 /* Now, shall we get started? */
+END
+
+PATCH_IF (GAME_IS ~bgee~) BEGIN
+  WRITE_LONG PICKED_POCKET (BNOT 0x0)
+  WRITE_LONG HIDDEN_IN_SHADOWS (BNOT 0x0)
+  WRITE_LONG SPELL_DISRUPTED (BNOT 0x0)
+  WRITE_LONG SET_A_TRAP (BNOT 0x0)
+  END
+
   SAY COMPLIMENT1 @526 /* The way you fought proves you will serve our team well...I have high hopes for you. */
   SAY RESPONSE_TO_COMPLIMENT2 @527 /* You have my thanks. */
   SAY INSULT @528 /* I'll tell you the difference between you and me...it's my iron resolve. */
@@ -88,8 +108,8 @@ COPY ~Ishlilkamod/Characters/#Ishy.cre~ ~override/#Ishy.cre~
   SAY CRITICAL_MISS @530 /* I made a slight miscalculation. */ 
   SAY TARGET_IMMUNE @531 /* Strikes are ineffective! */  
   SAY INVENTORY_FULL @532 /* I can't carry this, sorry. */ 
-  SAY SELECT_RARE1 ~~ 
-  SAY SELECT_RARE2 ~~ 
+  WRITE_LONG SELECT_RARE1 (BNOT 0x0)
+  WRITE_LONG SELECT_RARE2 (BNOT 0x0) 
   SAY REACT_TO_DIE_GENERAL @533 /* No! I'll not let your death be in vain. */
     ADD_CRE_ITEM ~sper01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP
     ADD_CRE_ITEM ~I!qspr~ #0 #0 #0 ~IDENTIFIED~ ~INV1~ 
@@ -332,3 +352,4 @@ REQUIRE_PREDICATE (MOD_IS_INSTALLED ~SETUP-ISHLILKAMOD.TP2~ ~500~) @549 /* Compo
 // No cutscene for first meeting
 
 COMPILE EVALUATE_BUFFER ~Ishlilkamod/Scripts/cutcutscene/ishyscrp.baf~
+
