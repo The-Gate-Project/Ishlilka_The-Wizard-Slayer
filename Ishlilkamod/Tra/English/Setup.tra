@@ -11,7 +11,7 @@
 @510  = ~My resolve is set!~ [I!ib2]
 @511  = ~Enough of this disgrace...i'll redeem myself now!~ [I!hrt]
 @512  = ~Father...i'm sorry...~ [I!igone]
-
+@513 = ~~ [I!ow]
 @514  = ~The scenery is nice, but shouldn't be push on?~
 @515  = ~I have a bad feeling...~ [I!dung]
 @516  = ~What a beautiful day.~
@@ -26,7 +26,7 @@
 @525  = ~Now, shall we get started?~ [I!ib1]
 @526  = ~The way you fought proves you will serve our team well...I have high hopes for you.~ [I!nice]
 @527  = ~You have my thanks.~ [I!thanks]
-@528  = ~I'll tell you the difference between you and me...it's my iron resolve.~ [I!ishdiss]
+@528  = ~I'll tell you the difference between you and me...it's my iron resolve.~ [I!ishdis]
 @529  = ~Excellent attack!~ [I!icrit]
 @530  = ~I made a slight miscalculation.~ [I!miss]
 @531  = ~Strikes are ineffective!~ [I!fail]

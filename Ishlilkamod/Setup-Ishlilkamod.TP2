@@ -67,7 +67,7 @@ COPY ~Ishlilkamod/Characters/#Ishy.cre~ ~override/#Ishy.cre~
  SAY BATTLE_CRY3 @510 /* My resolve is set! */
  SAY HURT @511 /* Enough of this disgrace...i'll redeem myself now! */
  SAY DYING @512 /* Father...i'm sorry... */
- WRITE_LONG DAMAGE (BNOT 0x0) 
+ SAY DAMAGE @513 
  SAY AREA_FOREST @514 /* The scenery is nice, but shouldn't be push on? */ 
  WRITE_LONG AREA_CITY (BNOT 0x0) 
  SAY AREA_DUNGEON @515 /* I have a bad feeling... */
