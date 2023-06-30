@@ -67,7 +67,7 @@ COPY ~Ishlilkamod/Characters/#Ishy.cre~ ~override/#Ishy.cre~
  SAY BATTLE_CRY3 @510 /* My resolve is set! */
  SAY HURT @511 /* Enough of this disgrace...i'll redeem myself now! */
  SAY DYING @512 /* Father...i'm sorry... */
- // SAY DAMAGE ~~ 
+ SAY DAMAGE @513 
  SAY AREA_FOREST @514 /* The scenery is nice, but shouldn't be push on? */ 
  // SAY AREA_CITY ~~ 
  SAY AREA_DUNGEON @515 /* I have a bad feeling... */
@@ -79,8 +79,6 @@ COPY ~Ishlilkamod/Characters/#Ishy.cre~ ~override/#Ishy.cre~
   SAY SELECT_ACTION1 @521 /* I agree. */
   SAY SELECT_ACTION2 @522 /* Leave it to me. */
   SAY SELECT_ACTION3 @523 /* Very well. Leave the rest to me. */
-  SAY SELECT_ACTION4 @524 /* Well then! Let's go! */
-  SAY SELECT_ACTION5 @525 /* Now, shall we get started? */
   SAY COMPLIMENT1 @526 /* The way you fought proves you will serve our team well...I have high hopes for you. */
   SAY RESPONSE_TO_COMPLIMENT2 @527 /* You have my thanks. */
   SAY INSULT @528 /* I'll tell you the difference between you and me...it's my iron resolve. */
@@ -91,6 +89,13 @@ COPY ~Ishlilkamod/Characters/#Ishy.cre~ ~override/#Ishy.cre~
   // SAY SELECT_RARE1 ~~ 
   // SAY SELECT_RARE2 ~~ 
   SAY REACT_TO_DIE_GENERAL @533 /* No! I'll not let your death be in vain. */
+  PATCH_IF (GAME_IS ~bgee~) BEGIN
+    SAY 0x1E0 @524 // BGEE_SELECT_ACTION4  /* Well then! Let's go! */
+    SAY 0x1E4 @525 // BGEE_SELECT_ACTION5  /* Now, shall we get started? */
+  END ELSE BEGIN
+    SAY SELECT_ACTION4 @524 /* Well then! Let's go! */
+    SAY SELECT_ACTION5 @525 /* Now, shall we get started? */
+  END
     ADD_CRE_ITEM ~sper01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP
     ADD_CRE_ITEM ~I!qspr~ #0 #0 #0 ~IDENTIFIED~ ~INV1~ 
     ADD_CRE_ITEM ~shld01~ #0 #0 #0 ~IDENTIFIED~ ~INV2~ 
