@@ -67,9 +67,9 @@ COPY ~Ishlilkamod/Characters/#Ishy.cre~ ~override/#Ishy.cre~
  SAY BATTLE_CRY3 @510 /* My resolve is set! */
  SAY HURT @511 /* Enough of this disgrace...i'll redeem myself now! */
  SAY DYING @512 /* Father...i'm sorry... */
- SAY DAMAGE ~~ 
+ // SAY DAMAGE ~~ 
  SAY AREA_FOREST @514 /* The scenery is nice, but shouldn't be push on? */ 
- SAY AREA_CITY ~~ 
+ // SAY AREA_CITY ~~ 
  SAY AREA_DUNGEON @515 /* I have a bad feeling... */
  SAY AREA_DAY @516 /* What a beautiful day. */ 
  SAY AREA_NIGHT @517 /* Let's keep on alert. Who knows what could sneak up on us. */ 
@@ -88,8 +88,8 @@ COPY ~Ishlilkamod/Characters/#Ishy.cre~ ~override/#Ishy.cre~
   SAY CRITICAL_MISS @530 /* I made a slight miscalculation. */ 
   SAY TARGET_IMMUNE @531 /* Strikes are ineffective! */  
   SAY INVENTORY_FULL @532 /* I can't carry this, sorry. */ 
-  SAY SELECT_RARE1 ~~ 
-  SAY SELECT_RARE2 ~~ 
+  // SAY SELECT_RARE1 ~~ 
+  // SAY SELECT_RARE2 ~~ 
   SAY REACT_TO_DIE_GENERAL @533 /* No! I'll not let your death be in vain. */
     ADD_CRE_ITEM ~sper01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP
     ADD_CRE_ITEM ~I!qspr~ #0 #0 #0 ~IDENTIFIED~ ~INV1~ 
