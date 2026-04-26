@@ -1,7 +1,7 @@
 BEGIN ishyP
 
 
-IF ~Global("endofbg1","GLOBAL",1)
+IF ~Global("Ishy_ENDOFBG1","GLOBAL",1)
 Global("ishsodhi","BD0010",0)~ FirstMeeting
 SAY @11500 /* <CHARNAME>! */
 ++ @11501 /* Hello again, Ishlilka. I see you are keeping yourself busy. */ + ishyhisod

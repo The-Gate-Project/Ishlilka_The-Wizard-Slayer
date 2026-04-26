@@ -4,7 +4,7 @@ BEGIN ishyhi
 
 IF ~NumTimesTalkedTo(0)
 !Global("ishhiJOnotnow","GLOBAL",1)
-Global("endofbg1","GLOBAL",0)~ FirstMeeting
+Global("Ishy_ENDOFBG1","GLOBAL",0)~ FirstMeeting
 SAY @10500 /* *You see a young half-orc woman training with her weapon in a small corner outside of the Friendly Arm Inn. She eventually notices you watching, and approaches.* */
 =@10501 /* Well, hello there. I couldn't help but notice you watching me. Might I ask your name? */ 
 ++ @10502 /* I am <CHARNAME>, pleased to meet you. You seem quite talented. */  + ishhiniceguy
@@ -14,7 +14,7 @@ IF ~InParty("%IMOEN_DV%")~ THEN REPLY @10503 /* I am <CHARNAME>, and this is Imo
 END
 
 IF ~Global("ishhiJOnotnow","GLOBAL",1)
-Global("endofbg1","GLOBAL",0)~ DelayedMeeting
+Global("Ishy_ENDOFBG1","GLOBAL",0)~ DelayedMeeting
 SAY @11000 /* Well, hello there. I can tell from your decent equipment you're not the bandits I am after. So are you going to tell me your name? */ 
 ++ @11001 /* I am <CHARNAME>. Pleased to meet you. */ DO ~IncrementGlobal("ishhiJOnotnow","GLOBAL",1)~ + ishhiniceguy
 IF ~InParty("%IMOEN_DV%")~ THEN REPLY @10503 /* I am <CHARNAME>, and this is Imoen. Pleased to meet you.  */ DO ~IncrementGlobal("ishhiJOnotnow","GLOBAL",1)~ + ishhiniceguy2

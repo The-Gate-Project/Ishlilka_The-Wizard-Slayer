@@ -1,8 +1,20 @@
 # Ishlilka the Wizard Slayer
 
-![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20&color=informational)
+[![Release](https://img.shields.io/github/v/release/The-Gate-Project/Ishlilka_The-Wizard-Slayer?include_prereleases&color=41788a)](https://github.com/The-Gate-Project/Ishlilka_The-Wizard-Slayer/releases)
+[![Published](https://img.shields.io/github/release-date-pre/The-Gate-Project/Ishlilka_The-Wizard-Slayer?display_date=published_at&label=published&color=014a69)](https://github.com/The-Gate-Project/Ishlilka_The-Wizard-Slayer/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/The-Gate-Project/Ishlilka_The-Wizard-Slayer/total?color=41788a)](https://github.com/The-Gate-Project/Ishlilka_The-Wizard-Slayer/releases)
 
-**Autor** : **WarChiefZeke**
+[![Language](https://img.shields.io/badge/language-english-014a69)](https://github.com/The-Gate-Project/Ishlilka_The-Wizard-Slayer/releases)
+[![Games](https://img.shields.io/badge/games-BG:EE%20%7C%20EET-41788a)](https://github.com/The-Gate-Project/Ishlilka_The-Wizard-Slayer/releases)
+
+<!--
+
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FThe-Gate-Project%2FIshlilka_The-Wizard-Slayer&countColor=41788a&style=flat)
+
+[![Platform](https://img.shields.io/badge/platform-Windows%20%a0%20macOS%20%a0%20Linux%20%a0%20Project%20Infinity-014a69)](https://github.com/The-Gate-Project/Ishlilka_The-Wizard-Slayer/releases)
+-->
+
+**Author** : **WarChiefZeke**
 
 [Link to original Mod Forum and BGEE Mod Download](https://forums.beamdog.com/discussion/63679/npc-mod-ishlilka-the-wizard-slayer-for-bg1-sod-full-version-1-4/p1)
 

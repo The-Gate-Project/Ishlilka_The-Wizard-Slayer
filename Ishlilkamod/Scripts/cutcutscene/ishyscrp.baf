@@ -8,7 +8,7 @@ SetGlobal("Ishtarnesh","GLOBAL",1)
 END
 
 IF 
-Global("endofbg1","GLOBAL",1)
+Global("Ishy_ENDOFBG1","GLOBAL",1)
 InParty(Myself)
 Global("IshyFistHelp","GLOBAL",0)
 Global("Chapter","GLOBAL",7)
@@ -62,7 +62,7 @@ Global("ishnewna","GLOBAL",0)
 CombatCounter(0)
 Dead("Mulahey")
 Global("Chapter","GLOBAL",3)
-!Global("endofbg1","GLOBAL",1)
+!Global("Ishy_ENDOFBG1","GLOBAL",1)
 THEN
 RESPONSE #100
 SetGlobal("ishnewna","GLOBAL",1)
@@ -78,7 +78,7 @@ IF
 Global("IshyQuest","GLOBAL",2)
 See([PC])
 Global("Ishyhuntbegins","GLOBAL",0)
-!Global("endofbg1","GLOBAL",1)
+!Global("Ishy_ENDOFBG1","GLOBAL",1)
 THEN RESPONSE #100
 SetGlobal("Ishyhuntbegins","GLOBAL",1)
 AddJournalEntry(@30,QUEST) /*Mage Huntress Extraordinaire
@@ -146,7 +146,7 @@ Global("IshyQuest","GLOBAL",0)
 !Global("Chapter","GLOBAL",1)
 !Global("Chapter","GLOBAL",2)
 Global("ishgoodgodimretarded","GLOBAL",0)
-!Global("endofbg1","GLOBAL",1)
+!Global("Ishy_ENDOFBG1","GLOBAL",1)
 THEN
 RESPONSE #100
 RealSetGlobalTimer("IshyQuestTimer","GLOBAL",2350)
@@ -271,7 +271,7 @@ END
 
 
 IF 
-Global("endofbg1","GLOBAL",1)
+Global("Ishy_ENDOFBG1","GLOBAL",1)
 Global("IshyTalk","GLOBAL",7)
 !Dead("Falteri")
 THEN RESPONSE #100 
@@ -288,7 +288,7 @@ END
 
 
 IF 
-Global("endofbg1","GLOBAL",1)
+Global("Ishy_ENDOFBG1","GLOBAL",1)
 Global("ishresetconvo","GLOBAL",0)
 THEN
 RESPONSE #100
@@ -298,7 +298,7 @@ SetGlobal("ishresetconvo","GLOBAL",1)
 END 
 
 IF
-Global("endofbg1","GLOBAL",1)
+Global("Ishy_ENDOFBG1","GLOBAL",1)
 !Global("IshyRomanceActive","GLOBAL",0)
 Global("convoresetish","GLOBAL",0)
 THEN RESPONSE #100
@@ -345,7 +345,7 @@ END
 
 IF
     See([PC])
-	Global("endofbg1","GLOBAL",0)
+	Global("Ishy_ENDOFBG1","GLOBAL",0)
     NumTimesTalkedTo(0)
 	Global("ishcutscene","%FriendlyArmInn%",0)
   THEN
@@ -434,12 +434,12 @@ END
 IF 
 Global("P!beginthesiege4","BD0120",0)
 THEN RESPONSE #100
-SetGlobal("endofbg1","GLOBAL",1)
+SetGlobal("Ishy_ENDOFBG1","GLOBAL",1)
 SetGlobal("P!beginthesiege4","BD0120",1)
 END  
 
 IF 
-Global("endofbg1","GLOBAL",1)
+Global("Ishy_ENDOFBG1","GLOBAL",1)
 Global("IshyFistHelp","GLOBAL",0)
 Global("Chapter","GLOBAL",7)
 THEN RESPONSE #100

@@ -204,33 +204,51 @@ SAY NAME2 @544 /* "Crusader" */
 ////////////////////
 
 
-
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDMKHIIB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDMKHIIB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDCORWIB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDCORWIB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDSAFANB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDSAFANB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDGARRIB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDGARRIB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDRASAAB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDRASAAB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDMINSCB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDMINSCB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDDYNAHB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDDYNAHB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDVICONB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDVICONB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDVOGHIB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDVOGHIB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDVICONB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDVICONB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDNEERAB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDNEERAB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDGLINTB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDGLINTB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDDORNB.dlg~) BEGIN
 COMPILE ~Ishlilkamod/Dialogues/BDDORNB.d~
-
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDBAELOB.dlg~) BEGIN
+COMPILE ~Ishlilkamod/Dialogues/BDBAELOB.d~
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDEDWINB.dlg~) BEGIN
+COMPILE ~Ishlilkamod/Dialogues/BDEDWINB.d~
+END
 
 
 // Compiling dialogues 
@@ -275,10 +293,16 @@ COPY ~Ishlilkamod/Portraits/IshyS.bmp~ ~override/IshyS.bmp~
 //Dialogue
 
 ACTION_IF (GAME_IS ~eet~) BEGIN
+PRINT ~              ~
+	PRINT ~APPEND pdialog.2da for EET~
+PRINT ~              ~
   APPEND ~pdialog.2da~
   ~#Ishy  IshyP  IshyD  bdishy  ****  ****  ****  ****~
   UNLESS ~#Ishy~
-END ELSE BEGIN
+END ELSE BEGIN // bgee bgt in this case (other exemple in ChaosKnight)
+PRINT ~              ~
+	PRINT ~APPEND pdialog.2da for BGEE or BGT~
+PRINT ~              ~
   APPEND ~pdialog.2da~
   ~#Ishy 	IshyP 	IshyD 	bdishy~
   UNLESS ~#Ishy~
@@ -338,6 +362,9 @@ GLINT    BDGLINTB
 	COPY ~.../ishy-inlined/BDBANTER.2DA~ ~override~ // copy the in-lined (memory-only) file we defined above into the override folder (as a real file)
 
 END
+PRINT ~              ~
+	PRINT ~BDDialog.2DA for SoD~
+PRINT ~              ~
 
 APPEND ~BDDialog.2DA~
 ~#Ishy 	IshyP 	bdishy 	****~
@@ -348,6 +375,9 @@ BEGIN @547 /* Deactivate first meeting cutscene */
 DESIGNATED 547
 LABEL ~WarChiefZeke-Ishlilka-NoCutscene~
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~SETUP-ISHLILKAMOD.TP2~ ~500~) @549 /* Component Ishlilka mod for BGSoD and EET is required */
+PRINT ~              ~
+	PRINT ~First meeting cutscene deactivated~
+PRINT ~              ~
 
 // No cutscene for first meeting
 

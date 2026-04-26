@@ -479,7 +479,7 @@ END
 
 IF ~Global("ishlilkaonce1","GLOBAL",0)
 Global("Chapter","GLOBAL",7)
-Global("endofbg1","GLOBAL",0)
+Global("Ishy_ENDOFBG1","GLOBAL",0)
 Global("IshyRomanceActive","GLOBAL",2)~ IshyBhaal
 SAY @10164 /* I still can't believe it. You. A child of Bhaal. */
 ++ @10165 /* Neither can I, Ishlilka. So this is why Gorion stayed in Candlekeep for so long. It was to protect me against my own nature, and those who would abuse it. */ DO ~SetGlobal("ishlilkaonce1","GLOBAL",2)~ GOTO IshB1

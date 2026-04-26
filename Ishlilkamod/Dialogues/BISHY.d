@@ -20,11 +20,11 @@ IF ~InParty("#Ishy")
 See("#Ishy")
 !StateCheck("Jaheira",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("Ishydruid","GLOBAL",0)~ THEN BJAHEI Ishydruid
+Global("Ishydruid","GLOBAL",0)~ THEN %JAHEIRA_BANTER% Ishydruid
 @9504 /*  I've been watching you for a time, Ishlilka. Honorable....associates that I work with would greatly value your skills. */
 DO ~SetGlobal("Ishydruid","GLOBAL",1)~
 == BISHY  @9505 /*  Would they? I work for my father, however. I appreciate the offer though.  */
-== BJAHEI @9506 /*  As you like, girl.  */
+== %JAHEIRA_BANTER% @9506 /*  As you like, girl.  */
 EXIT
 
 
@@ -35,7 +35,7 @@ Global("ISHYVICCY1","GLOBAL",0)
 InParty("Viconia")~ THEN BISHY ISHYVICCY1
 @9507 /* Viconia, I don't mind you. I see us as a lot alike, in fact. */
 DO ~SetGlobal("ISHYVICCY1","GLOBAL",1)~ 
-== BVICON @9508 /* Ugh. A half breed orc a lot alike to a drow? You are as a dog to me. Away with you.  */
+== %VICONIA_BANTER% @9508 /* Ugh. A half breed orc a lot alike to a drow? You are as a dog to me. Away with you.  */
 == BISHY @9509 /* Whatever. */
 EXIT
 
@@ -43,13 +43,13 @@ CHAIN IF ~InParty("#Ishy")
 InParty("Quayle")
 !StateCheck("Quayle",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("ISHYQU1","GLOBAL",0)~ THEN BQUAYL ISHYQU1
+Global("ISHYQU1","GLOBAL",0)~ THEN %QUAYLE_BANTER% ISHYQU1
 @9510 /* Many of your low-brained heritage don't appreciate my supieror intelligence for what it is. I hope you'll prove yourself different. */
 DO ~SetGlobal("ISHYQU1","GLOBAL",1)~
 == BISHY @9511 /* I'll start appreciating it when you can show me an example of this intelligence, Quayle. */
-== BQUAYL @9512 /* You think that's funny? Your primitive attempts at humor fail to impress. */
+== %QUAYLE_BANTER% @9512 /* You think that's funny? Your primitive attempts at humor fail to impress. */
 == BISHY @9513 /* Or maybe you are just too stupid to understand the humor. */
-== BQUAYL @9514 /* What?! I am not stupid, you dummy! */
+== %QUAYLE_BANTER% @9514 /* What?! I am not stupid, you dummy! */
 == BISHY @9515 /* Oh, nice one. Very clever. */
 EXIT
 
@@ -59,11 +59,11 @@ CHAIN IF ~InParty("#Ishy")
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
 Global("ISHYVICCY1","GLOBAL",1)
 Global("ISHYVICCY2","GLOBAL",0)
-InParty("Viconia")~ THEN BVICON ISHYVICCY2
+InParty("Viconia")~ THEN %VICONIA_BANTER% ISHYVICCY2
 @9516 /* Perhaps I was wrong about you at first. You a certainly a strong woman. And I can respect that. */
 DO ~SetGlobal("ISHYVICCY2","GLOBAL",1)~ 
 == BISHY @9517 /* Really? I mean, thanks. So are you.  */
-== BVICON @9518 /* Hmph. Don't make me regret what I just said. */
+== %VICONIA_BANTER% @9518 /* Hmph. Don't make me regret what I just said. */
 EXIT
 
 CHAIN IF ~InParty("#Ishy")
@@ -75,7 +75,7 @@ Global("ISHYVICCY3","GLOBAL",0)
 See("Viconia")~ THEN BISHY ISHYVICCY3
 @9519 /* It must have been difficult, fleeing the Underdark all alone. */
 DO ~SetGlobal("ISHYVICCY3","GLOBAL",1)~ 
-== BVICON @9520 /* Yes. The horrors of that realm are unlike anything your mind can imagine. Now speak of it no more.  */
+== %VICONIA_BANTER% @9520 /* Yes. The horrors of that realm are unlike anything your mind can imagine. Now speak of it no more.  */
 == BISHY @9521 /* Right...sorry. */
 EXIT
 
@@ -85,12 +85,12 @@ InParty("Alora")
 !StateCheck("Alora",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
 Global("IshyAloraBanter1","GLOBAL",0) 
-~ THEN BALORA ISHYALORABANTER1
+~ THEN %ALORA_BANTER% ISHYALORABANTER1
 @9522 /* Hey Ishy! */
 DO ~SetGlobal("IshyAloraBanter1","GLOBAL",1)~
-== BALORA @9523 /* What is that weird necklace you have! I've never seen a symbol like it before. Is it valuable? */
+== %ALORA_BANTER% @9523 /* What is that weird necklace you have! I've never seen a symbol like it before. Is it valuable? */
 == BISHY @9524 /* No, not really. It's mostly just sentimental. A gift from my parents...hey, wait! I don't ever wear it! How do you know I even have it! */
-== BALORA @9525 /* Um...anyway, it was pretty! Let's catch up now! */
+== %ALORA_BANTER% @9525 /* Um...anyway, it was pretty! Let's catch up now! */
 EXIT
 
 
@@ -101,21 +101,21 @@ InParty("Alora")
 Global("IshyAloraBanter2","GLOBAL",0)~ THEN BISHY ISHYALORABANTER2
 @9526 /* You're always so cheery, Alora. I wish I could be like that. */
 DO ~SetGlobal("IshyAloraBanter2","GLOBAL",1)~
-== BALORA @9527 /* Well thank you kindly! Somebody has to lift the spirits of the grumpyguts in this party! */
+== %ALORA_BANTER% @9527 /* Well thank you kindly! Somebody has to lift the spirits of the grumpyguts in this party! */
 == BISHY @9528 /* Aren't there any times when you feel sad? When putting on a smile is just too hard! */
-== BALORA @9529 /* Of course I feel sad sometimes. But it's never to hard to smile, silly! You'll never learn to feel better if you can't smile through the bad times! */
+== %ALORA_BANTER% @9529 /* Of course I feel sad sometimes. But it's never to hard to smile, silly! You'll never learn to feel better if you can't smile through the bad times! */
 == BISHY @9530 /* Well...maybe you're right. That was almost wise. I didn't know you had it in you, Alora. */
-== BALORA @9531 /* Hmph! */
+== %ALORA_BANTER% @9531 /* Hmph! */
 EXIT
 
 CHAIN IF ~InParty("#Ishy")
 InParty("Kagain")
 !StateCheck("Kagain",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyKagainBanter1","GLOBAL",0)~ THEN BKAGAI ISHYKAGAINBANTER1
+Global("IshyKagainBanter1","GLOBAL",0)~ THEN %KAGAIN_BANTER% ISHYKAGAINBANTER1
 @9532 /* I don't trust orclings. Even the lady ones. */
 DO ~SetGlobal("IshyKagainBanter1","GLOBAL",1)~
-== BKAGAI @9533 /* I've never known one of your kind I didn't want to split with my axe. */
+== %KAGAIN_BANTER% @9533 /* I've never known one of your kind I didn't want to split with my axe. */
 == BISHY @9534 /* You're welcome to try, stumpy. Otherwise, leave me alone.  */
 EXIT
 
@@ -130,9 +130,9 @@ Global("IshyImoenR","GLOBAL",0)~ THEN BISHY IshyImoenR
 DO ~SetGlobal("IshyImoenR","GLOBAL",1)~
 == BIMOEN @9536 /* Why ya asking about <CHARNAME>? You think he's cute or somethin'? */
 == BISHY @9537 /* I didn't say that! */
-== BIMOEN @9538 /* But you do! I can see it on your face! Ha! */
+== %IMOEN_BANTER% @9538 /* But you do! I can see it on your face! Ha! */
 == BISHY @9539 /* Imoen, I swear, if you say anything... */
-== BIMOEN @9540 /* Don't worry, my lips are sealed. Just between us girls, right? */
+== %IMOEN_BANTER% @9540 /* Don't worry, my lips are sealed. Just between us girls, right? */
 EXIT
 
 CHAIN
@@ -144,26 +144,26 @@ Global("IshyRomanceActive","GLOBAL",2)
 Global("Ishyimoencharnametalk","GLOBAL",0)~ THEN BISHY IshyImoenR1
 @9541 /* Imoen, I need some advice... */
 DO ~SetGlobal("Ishyimoencharnametalk","GLOBAL",1)~
-== BIMOEN @9542 /* Of course, Ishy! Always here to help, like a regular big sister, I am. */
+== %IMOEN_BANTER% @9542 /* Of course, Ishy! Always here to help, like a regular big sister, I am. */
 == BISHY @9543 /* Right...so, how can I get <CHARNAME> to like me? */
-== BIMOEN @9544 /* Ha! He's a pretty simple guy, you know? Not very smart or sophisticated or anything. Just lay on the charms? */
+== %IMOEN_BANTER% @9544 /* Ha! He's a pretty simple guy, you know? Not very smart or sophisticated or anything. Just lay on the charms? */
 == BISHY @9545 /* Lay on...the charms? */
-== BIMOEN @9546 /* Yup, we're definitely gonna have the Talk. */
+== %IMOEN_BANTER% @9546 /* Yup, we're definitely gonna have the Talk. */
 EXIT
 
 
 CHAIN
 IF ~InParty("#Ishy")
 InParty("%IMOEN_DV%")
-Global("IshyImoen1","GLOBAL",0)~ THEN BIMOEN IshyImoen1
+Global("IshyImoen1","GLOBAL",0)~ THEN %IMOEN_BANTER% IshyImoen1
 @9547 /* Heya Ishy! */
 == BISHY @9548 /* "Ishy?" */
 DO ~SetGlobal("IshyImoen1","GLOBAL",1)~
-== BIMOEN @9549 /* Yeah! "Ishlilka" is sucha mouthful, isn't it? Mind if I just call ya Ishy instead? */
+== %IMOEN_BANTER% @9549 /* Yeah! "Ishlilka" is sucha mouthful, isn't it? Mind if I just call ya Ishy instead? */
 == BISHY @9550 /* A little late to be asking that, isn't it?  */
-== BIMOEN @9551 /* Yeah, yeah. So why are you here anyway? You know, being an adventurer and stuff! */
+== %IMOEN_BANTER% @9551 /* Yeah, yeah. So why are you here anyway? You know, being an adventurer and stuff! */
 == BISHY @9552 /* My father is a great Antimagic Knight, Imoen. I want to live up to his example, and perhaps even lead men and women into battle on my own as well. */
-== BIMOEN @9553 /* You mean be a real leader, like <CHARNAME>? */
+== %IMOEN_BANTER% @9553 /* You mean be a real leader, like <CHARNAME>? */
 == BISHY @9554 /* Something like that, yes. */
 EXIT
 
@@ -173,11 +173,11 @@ IF ~InParty("#Ishy")
 InParty("Coran")
 !StateCheck("Coran",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyCoran1","GLOBAL",0)~ THEN BCORAN IshyCoran1
+Global("IshyCoran1","GLOBAL",0)~ THEN %CORAN_BANTER% IshyCoran1
 @9555 /* I'm not opposed to the company of orc women, you know. Provided I am sufficiently drunk that is.  */
 DO ~SetGlobal("IshyCoran1","GLOBAL",1)~
 == BISHY @9556 /* Stow it, you creep. I am always opposed to the company of perverts. */
-== BCORAN @9557 /* You wound me. It was only an innocent comment. */ 
+== %CORAN_BANTER% @9557 /* You wound me. It was only an innocent comment. */ 
 EXIT
 
 CHAIN 
@@ -185,9 +185,10 @@ IF ~InParty("#Ishy")
 InParty("Coran")
 Global("ishcoranbow","GLOBAL",0)~ THEN BISHY IshCoranBow
 @9558 /* I hate to admit it, but I don't think i'd last a minute against your archery. It's outstanding, truly. */
-== BCORAN @9559 /* What's this? Am I getting a compliment from Ishlilka now? Finally warming up to me, are you? */
+DO ~SetGlobal("ishcoranbow","GLOBAL",1)~
+== %CORAN_BANTER% @9559 /* What's this? Am I getting a compliment from Ishlilka now? Finally warming up to me, are you? */
 == BISHY @9560 /* Well, I certainly wouldn't want you as my enemy. */
-== BCORAN @9561 /* Nobody does, my dear. */
+== %CORAN_BANTER% @9561 /* Nobody does, my dear. */
 EXIT 
 
 
@@ -195,11 +196,11 @@ CHAIN
 IF ~InParty("#Ishy")
 !StateCheck("Coran",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshySafana1","GLOBAL",0)~ THEN BSAFAN IshySafana1
+Global("IshySafana1","GLOBAL",0)~ THEN %SAFANA_BANTER% IshySafana1
 @9562 /* Hm...yes. My dear, you are certainly passable.  */
 DO ~SetGlobal("IshySafana1","GLOBAL",1)~
 == BISHY @9563 /* What are you talking about, Safana? */
-== BSAFAN @9564 /* I mean your looks aren't so far gone that you can't aspire to a small amount of beauty if you tried, dear. Let me teach you some things. */ 
+== %SAFANA_BANTER% @9564 /* I mean your looks aren't so far gone that you can't aspire to a small amount of beauty if you tried, dear. Let me teach you some things. */ 
 == BISHY @9565 /* Um...well, sure. It couldn't hurt, right? */
 EXIT
 
@@ -207,13 +208,13 @@ CHAIN
 IF ~InParty("#Ishy")
 !StateCheck("Branwen",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyBranwen1","GLOBAL",0)~ THEN BBRANW IshyBranwen1
+Global("IshyBranwen1","GLOBAL",0)~ THEN %BRANWEN_BANTER% IshyBranwen1
 @9566 /* Ishlilka, was it? */
 DO ~SetGlobal("IshyBranwen1","GLOBAL",1)~
 == BISHY @9567 /* Uh...yeah. */
-== BBRANW @9568 /* Hold your head up, girl. You are too proud a warrior to act like such a mewling kitten. */
+== %BRANWEN_BANTER% @9568 /* Hold your head up, girl. You are too proud a warrior to act like such a mewling kitten. */
 == BISHY @9569 /* Right. I'll try. */
-== BBRANW @9570 /* *Sigh* */
+== %BRANWEN_BANTER% @9570 /* *Sigh* */
 EXIT
 
 CHAIN IF ~InParty("#Ishy")
@@ -221,7 +222,7 @@ InParty("Branwen")
 Global("BranwenIshy","GLOBAL",0)~ THEN BISHY IshyBranwen2
 @9571 /* For a priest you fight well, Branwen. My father's mercenaries might have need of someone like you. */
 DO ~SetGlobal("BranwenIshy","GLOBAL",1)~ 
-== BBRANW @9572 /* I once did such a thing and there was no honor in it, but you seem a different sort. Let's have a drink tonight and talk it over more. */
+== %BRANWEN_BANTER% @9572 /* I once did such a thing and there was no honor in it, but you seem a different sort. Let's have a drink tonight and talk it over more. */
 == BISHY @9573 /* I'd like that. */
 EXIT 
 
@@ -258,6 +259,7 @@ IF ~InParty("#Ishy")
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
 Global("IshyMinsc1","GLOBAL",0)~ THEN %MINSC_BANTER% IshyMinsc1
 @9581 /* Ishlilka! You are a noble warrior indeed. See how Boo swells with pride in your presence?  */
+DO ~SetGlobal("IshyMinsc1","GLOBAL",1)~
 == BISHY @9582 /* Well, thank you Minsc. And you too, little Boo. */
 == %MINSC_BANTER% @9583 /* Have you ever considered becoming a ranger? Think of the benefits! You could have a miniature giant space hamster of your very own! */
 == BISHY @9584 /* That's certainly tempting, i'll admit. He's so cute! Aren't you, Boo?  */
@@ -269,11 +271,11 @@ CHAIN
 IF ~InParty("#Ishy")
 !StateCheck("SHARTEEL",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyShar1","GLOBAL",0)~ THEN BSHART IshyShar1
+Global("IshyShar1","GLOBAL",0)~ THEN %SHARTEEL_BANTER% IshyShar1
 @9586 /*  Don't worry about what any man says about you, Ishlilka. They are intimidated by strong women like us.  */
 DO ~SetGlobal("IshyShar1","GLOBAL",1)~
 == BISHY @9587 /*  I think that was a compliment, so i'll take it.  */
-== BSHART @9588 /*  It was. Powerful women should stick together. All the better to stick it to the men who cross us.  */
+== %SHARTEEL_BANTER% @9588 /*  It was. Powerful women should stick together. All the better to stick it to the men who cross us.  */
 EXIT
 
 CHAIN
@@ -281,13 +283,13 @@ IF ~InParty("#Ishy")
 Global("IshyRomanceActive","GLOBAL",2)
 !StateCheck("SHARTEEL",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyShar2","GLOBAL",0)~ THEN BSHART IshyShar2
+Global("IshyShar2","GLOBAL",0)~ THEN %SHARTEEL_BANTER% IshyShar2
 @9589 /* So, you've started bedding <CHARNAME>, is it? */
 DO ~SetGlobal("IshyShar2","GLOBAL",1)~
 == BISHY @9590 /* What?! No, it's not like that... */
-== BSHART @9591 /* Oh please. Just make sure not to get attatched. Men can't be trusted, and aren't worth it anyways. */
+== %SHARTEEL_BANTER% @9591 /* Oh please. Just make sure not to get attatched. Men can't be trusted, and aren't worth it anyways. */
 == BISHY @9592 /* I am really sorry you feel that way. One day, I hope the pain inside you can be healed. */
-== BSHART @9593 /* Pfeh. I don't need "healing." */
+== %SHARTEEL_BANTER% @9593 /* Pfeh. I don't need "healing." */
 EXIT
 
 
@@ -298,13 +300,13 @@ See("Montaron")
 CombatCounter(0)
 !See([ENEMY])
 Global("IshyMont","GLOBAL",0)
-!Dead("Xzar")~ THEN BMONTA IshyMontaron1
+!Dead("Xzar")~ THEN %MONTARON_BANTER% IshyMontaron1
 @9594 /* Mage-bleeder, I have need of ye. */
 == BISHY @9595 /* For what exactly? */
 DO ~SetGlobal("IshyMont","GLOBAL",1)~
-== BMONTA @9596 /* How much would it cost? Ya know, to off my mad little "partner", quiet like. */ 
+== %MONTARON_BANTER% @9596 /* How much would it cost? Ya know, to off my mad little "partner", quiet like. */ 
 == BISHY @9597 /* Why couldn't you just do such a thing yourself? */
-== BMONTA @9598 /* Never know who's watching, aye...magical or otherwise. Agh, forget it. Ye've not the stomach for it, weakling. */
+== %MONTARON_BANTER% @9598 /* Never know who's watching, aye...magical or otherwise. Agh, forget it. Ye've not the stomach for it, weakling. */
 EXIT 
 	
 CHAIN
@@ -315,9 +317,9 @@ CombatCounter(0)
 Global("IshyMont1","GLOBAL",0)~ THEN BISHY IshyMontaron2
 @9599 /* I've never seen a halfing fight like that. Quite impressive. */
 DO ~SetGlobal("IshyMont1","GLOBAL",1)~
-== BMONTA @9600 /* Ach, speak to me again like that, and ye will be the next one I bleed. */
+== %MONTARON_BANTER% @9600 /* Ach, speak to me again like that, and ye will be the next one I bleed. */
 == BISHY @9601 /* There's no need to be like that. It was only a compliment. */
-== BMONTA @9602 /* Ye may be a mite taller than me, girlie, but I can end ye before ye blink. Never forget that. */
+== %MONTARON_BANTER% @9602 /* Ye may be a mite taller than me, girlie, but I can end ye before ye blink. Never forget that. */
 EXIT 
 
 CHAIN IF 
@@ -325,13 +327,13 @@ CHAIN IF
 !StateCheck("Montaron",STATE_SLEEPING)
 CombatCounter(0)
 !See([ENEMY])
-Global("IshyAjantis","GLOBAL",0)~ THEN BAJANT IshyAjantis1
+Global("IshyAjantis","GLOBAL",0)~ THEN %AJANTIS_BANTER% IshyAjantis1
 @9603 /* I have heard of the Spears of Argath, you know. */
 DO ~SetGlobal("IshyAjantis","GLOBAL",1)~
 == BISHY @9604 /* Oh? I hope their reputation precedes them in a good way. */
-== BAJANT @9605 /* Indeed it does, milady. Even the Order respects them for their deeds of valor.  */
+== %AJANTIS_BANTER% @9605 /* Indeed it does, milady. Even the Order respects them for their deeds of valor.  */
 == BISHY @9606 /* Well, it's a reputation to live up to at least. Battle for coin doesn't always attract the most reputable sort, however. */
-== BAJANT @9607 /* There is always knighthood. */
+== %AJANTIS_BANTER% @9607 /* There is always knighthood. */
 EXIT 	
 
 CHAIN IF 
@@ -339,11 +341,11 @@ CHAIN IF
 !StateCheck("Montaron",STATE_SLEEPING)
 CombatCounter(0)
 !See([ENEMY])
-Global("IshyAjantis1","GLOBAL",0)~ THEN BAJANT IshyAjantis1
+Global("IshyAjantis1","GLOBAL",0)~ THEN %AJANTIS_BANTER% IshyAjantis1
 @9608 /* I think you woul make a fine Paladin. */
 DO ~SetGlobal("IshyAjantis1","GLOBAL",1)~
 == BISHY @9609 /* If I wasn't an orc, you mean? Has there ever been such a thing? */
-== BAJANT @9610 /* Well...i'm not sure, truth be told. Perhaps you could be the first.  */
+== %AJANTIS_BANTER% @9610 /* Well...i'm not sure, truth be told. Perhaps you could be the first.  */
 == BISHY @9611 /* I appreciate the thought, but i'm fine where I am.  */
 EXIT 	
 	
@@ -355,9 +357,9 @@ InParty("#Ishy")
 Global("IshyGar1","GLOBAL",0)~ THEN BISHY IshyGar1
 @9612 /*  Garrick, this may be an odd request, but do you know any songs regarding orcs? That aren't about a bloodbath of some kind?  */
 DO ~SetGlobal("IshyGar1","GLOBAL",1)~
-== BGARRI @9613 /* Um...no, my lady. */
+== %GARRICK_BANTER% @9613 /* Um...no, my lady. */
 == BISHY @9614 /*  That's a shame. Your music is always so pleasing to hear. I'd hoped there be a tale I could relate to.  */
-== BGARRI @9615 /*  Well, thank you, my lady! If I come across any, I will be sure to learn them!  */
+== %GARRICK_BANTER% @9615 /*  Well, thank you, my lady! If I come across any, I will be sure to learn them!  */
 == BISHY @9616 /* I've never heard of any, so don't burden yourself searching on my account. */
 EXIT
 
@@ -369,15 +371,15 @@ InParty("Garrick")
 Global("Ishygarnight","GLOBAL",0)~ THEN BISHY Ishygarnight
 @9617 /* Haha! Garrick, that was wonderful! Play another song! */
 DO ~SetGlobal("Ishygarnight","GLOBAL",1)~
-== BGARRI @9618 /* My lady, I think you've had enough to drink... */
+== %GARRICK_BANTER% @9618 /* My lady, I think you've had enough to drink... */
 == BISHY @9619 /* What? I'm fine! The sun has set, we're enjoying the great outdoors. What's wrong with a little drink? */
-== BGARRI @9620 /* Well, my lady, it's just that I wouldn't it a "little" when you start to stumble.  */
+== %GARRICK_BANTER% @9620 /* Well, my lady, it's just that I wouldn't it a "little" when you start to stumble.  */
 == BISHY @9621 /* Garrick.... */
-== BGARRI @9622 /* Um...yes, Ishlilka? */
+== %GARRICK_BANTER% @9622 /* Um...yes, Ishlilka? */
 == BISHY @9623 /* Do you think <CHARNAME>...likes me? */
-== BGARRI @9624 /* Ah, love! Just the thing that will brighten up my tales of these adventures! */
+== %GARRICK_BANTER% @9624 /* Ah, love! Just the thing that will brighten up my tales of these adventures! */
 == BISHY @9625 /* Garrick! */
-== BGARRI @9626 /* Oh! Right. Um, I suppose it is possible, yes. */
+== %GARRICK_BANTER% @9626 /* Oh! Right. Um, I suppose it is possible, yes. */
 == BISHY @9627 /* Ugh, forget it! ...But thanks anyway, Garrick. */
 EXIT
 
@@ -386,11 +388,11 @@ IF ~InParty("#Ishy")
 InParty("Yeslick")
 !StateCheck("Yeslick",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyYes1","GLOBAL",0)~ THEN BYESLI IshyYes1
+Global("IshyYes1","GLOBAL",0)~ THEN %YESLICK_BANTER% IshyYes1
 @9628 /*  You know, in all my years I have seen many half orcs. Not many were as kind as you, lady.  */
 DO ~SetGlobal("IshyYes1","GLOBAL",1)~
 == BISHY @9629 /* Well, thank you Yeslick. That was very kind. */
-== BYESLI @9630 /*  I just hope the harshness of the world doesn't dull your kind nature in time.   */
+== %YESLICK_BANTER% @9630 /*  I just hope the harshness of the world doesn't dull your kind nature in time.   */
 EXIT
 
 CHAIN
@@ -401,19 +403,19 @@ InParty("Yeslick")
 Global("IshyYes2","GLOBAL",0)~ THEN BISHY IshyYes2
 @9631 /*  I'm really sorry about what happened, Yeslick. You know, to your clan and it's home.  */
 DO ~SetGlobal("IshyYes2","GLOBAL",1)~
-== BYESLI @9632 /* I prefer not to think of it overmuch, if you don't mind. But still. I appreciate the sentiment.  */
-== BYESLI @9633 /*  The beating we gave those filth in return is as much a reward as i'm going to get, I figure. That will have to be enough for me.  */
+== %YESLICK_BANTER% @9632 /* I prefer not to think of it overmuch, if you don't mind. But still. I appreciate the sentiment.  */
+== %YESLICK_BANTER% @9633 /*  The beating we gave those filth in return is as much a reward as i'm going to get, I figure. That will have to be enough for me.  */
 EXIT
 
 CHAIN
 IF ~InParty("#Ishy")
 !StateCheck("Kivan",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyKiv","GLOBAL",0)~ THEN BKIVAN IshyKiv1
+Global("IshyKiv","GLOBAL",0)~ THEN %KIVAN_BANTER% IshyKiv1
 @9634 /*  Have you ever spent much time in the wilderness, Ishlilka?  */
 DO ~SetGlobal("IshyKiv","GLOBAL",1)~
 == BISHY @9635 /* Well, yes, in fact, i've spent a good deal of time stalking the wilderness areas. The town I lived in was not always kind to me. Sometimes it was easier to be alone.   */
-== BKIVAN @9636 /* I understand. The solitude of forested lands can be intoxicating. But it is no excuse to run from ones problems.  */
+== %KIVAN_BANTER% @9636 /* I understand. The solitude of forested lands can be intoxicating. But it is no excuse to run from ones problems.  */
 EXIT
 
 CHAIN
@@ -421,13 +423,13 @@ IF ~InParty("#Ishy")
 InParty("KIVAN")
 !StateCheck("KIVAN",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyKiv2","GLOBAL",0)~ THEN BKIVAN IshyKiv2
+Global("IshyKiv2","GLOBAL",0)~ THEN %KIVAN_BANTER% IshyKiv2
 @9637 /*  Be careful, Ishlilka.  */
 DO ~SetGlobal("IshyKiv2","GLOBAL",1)~
 == BISHY @9638 /* Hm? What do you mean?   */
-== BKIVAN @9639 /* You hunt down criminal mages for a living, yes? Be wary that the hunter does not become the hunted. Mages are highly unpredictable prey, and you are still coming into your own power. */
+== %KIVAN_BANTER% @9639 /* You hunt down criminal mages for a living, yes? Be wary that the hunter does not become the hunted. Mages are highly unpredictable prey, and you are still coming into your own power. */
 == BISHY @9640 /* Thank you for the advice, Kivan. I'm not too worried, however. I've got <CHARNAME> to back me up, right? */
-== BKIVAN @9641 /* Indeed. That one shows much potential. */
+== %KIVAN_BANTER% @9641 /* Indeed. That one shows much potential. */
 EXIT
 
 
@@ -436,12 +438,12 @@ IF ~InParty("#Ishy")
 InParty("Kivan")
 !StateCheck("Kivan",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyKiv3","GLOBAL",0)~ THEN BKIVAN IshyKiv3
+Global("IshyKiv3","GLOBAL",0)~ THEN %KIVAN_BANTER% IshyKiv3
 @9642 /* You wield a bow with skill, Ishlilka, but I feel with some more practice you could easily grow twice as effective. Would you care for me to teach you sometime, perhaps? */
 DO ~SetGlobal("IshyKiv3","GLOBAL",1)~
 == BISHY @9643 /* I'd like that, Kivan. You're certainly much better handling a bow than I am. I guess that's to be expected from an elf, however. Especially a ranger. */
-== BKIVAN @9644 /* Perhaps that is true, although it certainly did not come to me so easily. Many hours did I have to practice in order to gain the skills that I have. */
-== BKIVAN @9645 /* However little good it did me in the end. */
+== %KIVAN_BANTER% @9644 /* Perhaps that is true, although it certainly did not come to me so easily. Many hours did I have to practice in order to gain the skills that I have. */
+== %KIVAN_BANTER% @9645 /* However little good it did me in the end. */
 EXIT
 
 
@@ -452,11 +454,11 @@ IF ~InParty("#Ishy")
 InParty("Tiax")
 !StateCheck("Tiax",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyTiax","GLOBAL",0)~ THEN BTIAX IshyTiax1
+Global("IshyTiax1","GLOBAL",0)~ THEN %TIAX_BANTER% IshyTiax1
 @9646 /*  Yes...you will make the perfect minion for Tiax's army when he rules all!   */
 DO ~SetGlobal("IshyTiax1","GLOBAL",1)~
 == BISHY @9647 /*  Are you going on about this again? Honestly, <CHARNAME>, I have no idea why you keep him around.   */
-== BTIAX @9648 /* Silence, disobediant wench! Or you will feel the future wrath of mighty Tiax!  */
+== %TIAX_BANTER% @9648 /* Silence, disobediant wench! Or you will feel the future wrath of mighty Tiax!  */
 == BISHY @9649 /* Well I certainly wouldn't want that to happen, would I? */
 EXIT
 
@@ -466,11 +468,11 @@ InParty("Tiax")
 See("#Ishy")
 !StateCheck("Tiax",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyTiax1","GLOBAL",0)~ THEN BTIAX IshyTiax2
+Global("IshyTiax2","GLOBAL",0)~ THEN %TIAX_BANTER% IshyTiax2
 @9650 /* Great news, unworthy one! */
 DO ~SetGlobal("IshyTiax2","GLOBAL",1)~
 == BISHY @9651 /* What is is this time? */
-== BTIAX @9652 /* The great Tiax has decided your life will be spared under his impending rule, and you may even have a position one of my personal guards! */
+== %TIAX_BANTER% @9652 /* The great Tiax has decided your life will be spared under his impending rule, and you may even have a position one of my personal guards! */
 == BISHY @9653 /* When you finally "conquer all", as you say, i'd be glad to perform that role. Good luck with that. */
 EXIT
 
@@ -482,17 +484,17 @@ InParty("Skie")
 Global("IshyEl1","GLOBAL",0)~ THEN BISHY IshyEl1
 @9654 /*  I dislike the way you treat Skye. You think you're so charming. I can see right through you.   */
 DO ~SetGlobal("IshyEl1","GLOBAL",1)~
-== BELDOT  @9655 /*  What would you know of charming, hideous orc thing? You were not born to be one of the beautiful people. I imagine concepts of "charm" elude your simple mind.  */
+== %ELDOTH_BANTER%  @9655 /*  What would you know of charming, hideous orc thing? You were not born to be one of the beautiful people. I imagine concepts of "charm" elude your simple mind.  */
 == BISHY @9656 /*  If you hurt her, you better be far from here when you do it.  */
 EXIT
 
 CHAIN 
 IF ~InParty("Eldoth")
 InParty("#Ishy")
-Global("IshyEl2","GLOBAL",0)~ THEN BELDOT IshyEl2
+Global("IshyEl2","GLOBAL",0)~ THEN %ELDOTH_BANTER% IshyEl2
 @9657 /* You are too friendly with Skie. You think your bumbling self can make her believe she can do better? Don't be ridiculous. */ DO ~SetGlobal("IshyEl2","GLOBAL",1)~
 == BISHY @9658 /* I don't need to do anything, she will realize it soon enough. In the meantime, keep your slimey self away from me. */
-== BELDOT @9659 /* Gladly...orc bitch. */
+== %ELDOTH_BANTER% @9659 /* Gladly...orc bitch. */
 EXIT
 
 CHAIN 
@@ -503,7 +505,7 @@ InParty("Skie")
 Global("IshySk6","GLOBAL",0)~ THEN BISHY IshySk1
 @9660 /*  Skye, you're a nice girl. But with all due respect, you're being a bit naive. Eldoth is using you! Why do you stay with that jerk? He's just going to hurt you and abandon you in the end.   */
 DO ~SetGlobal("IshySk6","GLOBAL",1)~ 
-== BSKIE @9661 /*  Again, Ishlilka? I thank you for your concern, because you have always been kind to me. But I am an adult, and I can handle myself, thank you. Besides, he loves me. I know it.   */
+== %SKIE_BANTER% @9661 /*  Again, Ishlilka? I thank you for your concern, because you have always been kind to me. But I am an adult, and I can handle myself, thank you. Besides, he loves me. I know it.   */
 == BISHY @9662 /* *sigh*  */
 EXIT
 
@@ -511,22 +513,22 @@ CHAIN
 IF ~InParty("Skie")
 InParty("#Ishy")
 !Global("IshyRomanceActive","GLOBAL",0)
-Global("IshySk1","GLOBAL",0)~ THEN BSKIE IshySk90
+Global("IshySk1","GLOBAL",0)~ THEN %SKIE_BANTER% IshySk90
 @9663 /* <CHARNAME> is so nice to you, you know. */ DO ~SetGlobal("IshySk1","GLOBAL",1)~
 == BISHY @9664 /* Yes, he's been very sweet. I didn't meet him until after he set out on the road, but I think the loss of his father really hit him hard. */
-== BSKIE @9665 /* I wish Eldoth was as nice to me. Nobody questions that <CHARNAME> cares about you, after all. */
+== %SKIE_BANTER% @9665 /* I wish Eldoth was as nice to me. Nobody questions that <CHARNAME> cares about you, after all. */
 == BISHY @9666 /* Well, they might have a- */
-== BSKIE @9667 /* You too? Please, let's change the subject. */
+== %SKIE_BANTER% @9667 /* You too? Please, let's change the subject. */
 EXIT
 
 CHAIN
 IF ~InParty("#Ishy")
 InParty("Skie")
 Global("IshySk9","GLOBAL",0)
-Global("IshySk99","GLOBAL",0)~ THEN BSKIE IshySK9
+Global("IshySk99","GLOBAL",0)~ THEN %SKIE_BANTER% IshySK9
 @9668 /* You're so impressive in battle, Ishlilka. Like a real adventurer. I wish I was that brave. */ DO ~SetGlobal("IshySk9","GLOBAL",1)~
 == BISHY @9669 /* Thanks Skie, but don't worry, you have skills I could never do. */
-== BSKIE @9670 /* The others aren't always nice to me. They say I complain too much. But i'm glad you're here with us! */
+== %SKIE_BANTER% @9670 /* The others aren't always nice to me. They say I complain too much. But i'm glad you're here with us! */
 EXIT
 
 
@@ -535,10 +537,10 @@ IF ~InParty("#Ishy")
 InParty("Skie")
 Global("IshySk99","GLOBAL",0)
 InParty("%IMOEN_DV%")
-Global("IshySk9","GLOBAL",0)~ THEN BSKIE IshSK99
+Global("IshySk9","GLOBAL",0)~ THEN %SKIE_BANTER% IshSK99
 @9671 /* You're so impressive in battle, Ishy. Like a real adventurer. I wish I was that brave. */ DO ~SetGlobal("IshySk99","GLOBAL",1)~
 == BISHY @9672 /* Now you too? Did you get that from Imoen? */
-== BSKIE @9673 /* I take it you don't like it very much? I'll stick with Ishlilka, then. I wouldn't want for you to be rude to me as well. */
+== %SKIE_BANTER% @9673 /* I take it you don't like it very much? I'll stick with Ishlilka, then. I wouldn't want for you to be rude to me as well. */
 == BISHY @9674 /* Well, gee...now you made me feel bad about it. */
 EXIT
 
@@ -548,10 +550,10 @@ IF ~InParty("Khalid")
 InParty("#Ishy")
 !StateCheck("Khalid",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyKh2","GLOBAL",0)~ THEN BKHALI IshyKh2
-@9675 /* I hope you are not o-offended by this question, but are your parents as n-noble as you are? */
+Global("IshyKh2","GLOBAL",0)~ THEN %KHALID_BANTER% IshyKh2
+@9675 /* I hope you are not o-offended by this question, but are your parents as n-noble as you are? */ DO ~SetGlobal("IshyKh2","GLOBAL",1)~
 == BISHY @9676 /* Well, my father was and still does work in a reuptable mercenary company, and he's always been fair to everyone he met. My mother...well, she's certainly a good person now. But her past is more...colorful.  */
-== BKHALI @9677 /* I-I see. We will speak of it no more then.  */
+== %KHALID_BANTER% @9677 /* I-I see. We will speak of it no more then.  */
 EXIT
 
 CHAIN 
@@ -559,12 +561,12 @@ IF ~InParty("#Ishy")
 InParty("Khalid")
 !StateCheck("Khalid",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyKh1","GLOBAL",0)~ THEN BKHALI IshyKh1
+Global("IshyKh1","GLOBAL",0)~ THEN %KHALID_BANTER% IshyKh1
 @9678 /*  W-w-where did you learn the arts of weapons, Ishlilka? Your technique is r-rather impressive...   */
 DO ~SetGlobal("IshyKh1","GLOBAL",1)~
 == BISHY  @9679 /*  My father taught me. We would always train until I could barely take it anymore.  */
 == BISHY @9680 /* After one particularly brutal session, he told me "I love you, Ishlilka. And I won't always be there to protect you. So you have to get strong now. You will understand later." For some reason, that always stuck with me.  */
-== BKHALI @9681 /* W-wise words, considering where we are now.  */
+== %KHALID_BANTER% @9681 /* W-wise words, considering where we are now.  */
 EXIT
 
 
@@ -575,11 +577,11 @@ See("#Ishy")
 !StateCheck("Jaheira",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
 Global("IshyRomanceActive","GLOBAL",2)
-Global("IshyJa1","GLOBAL",0)~ THEN BJAHEI IshyJa1
+Global("IshyJa1","GLOBAL",0)~ THEN %JAHEIRA_BANTER% IshyJa1
 @9682 /*  Ishlilka, <CHARNAME> is going through some very hard times right now, you understand?   */
 DO ~SetGlobal("IshyJa1","GLOBAL",1)~
 == BISHY  @9683 /*  Of course. Why are you telling me this.  */
-== BJAHEI @9684 /*  No big reason. You two are growing close of late. I merely wanted to let you that he may not be ready for what you may be seeking.  */
+== %JAHEIRA_BANTER% @9684 /*  No big reason. You two are growing close of late. I merely wanted to let you that he may not be ready for what you may be seeking.  */
 == BISHY @9685 /*  I'm sure we will be survive without your advice.  */
 EXIT
 
@@ -588,11 +590,11 @@ IF ~InParty("#Ishy")
 See("#Ishy")
 !StateCheck("Jaheira",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyJa2","GLOBAL",0)~ THEN BJAHEI IshyJa2
+Global("IshyJa2","GLOBAL",0)~ THEN %JAHEIRA_BANTER% IshyJa2
 @9686 /*  Hold your head up, girl. It is unbecoming of a warrior to be so timid.   */
 DO ~SetGlobal("IshyJa2","GLOBAL",1)~
 == BISHY  @9687 /*  Timid, like Khalid?  */
-== BJAHEI @9688 /*  Very funny. I was only trying to give you some advice.   */
+== %JAHEIRA_BANTER% @9688 /*  Very funny. I was only trying to give you some advice.   */
 == BISHY @9689 /*  I can look after myself, thank you.  */
 EXIT
 
@@ -601,12 +603,12 @@ IF ~InParty("#Ishy")
 See("#Ishy")
 !StateCheck("Dynaheir",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyDyna1","GLOBAL",0)~ THEN BDYNAH IshyDyna1
+Global("IshyDyna1","GLOBAL",0)~ THEN %DYNAHEIR_BANTER% IshyDyna1
 @9690 /*  Thy ferociousness in combat is admirable, my noble friend. Rashemi beserkers value such courage in battle.  */
 DO ~SetGlobal("IshyDyna1","GLOBAL",1)~
 == BISHY @9691 /* I'm not sure how I feel about being compared to a barbarian...but thank you.  */
-== BDYNAH @9692 /* Twas meant as a compliment, and I should note that one should not be ashamed of what they are good at, no matter how others view it. */
-== BDYNAH @9693 /* And please...don't take Minsc as an example. Our beserkers are not often...quite so touched in the head. */
+== %DYNAHEIR_BANTER% @9692 /* Twas meant as a compliment, and I should note that one should not be ashamed of what they are good at, no matter how others view it. */
+== %DYNAHEIR_BANTER% @9693 /* And please...don't take Minsc as an example. Our beserkers are not often...quite so touched in the head. */
 EXIT
 
 CHAIN 
@@ -615,11 +617,11 @@ See("#Ishy")
 InParty("Xan")
 !StateCheck("Xan",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyXan1","GLOBAL",0)~ THEN BXANNN IshyXan1
+Global("IshyXan1","GLOBAL",0)~ THEN %XAN_BANTER% IshyXan1
 @9694 /*  Oh, gods above...another deary day filled with reckless combat, plunging use inevitably towards our ultimate doom.  */
 DO ~SetGlobal("IshyXan1","GLOBAL",1)~
 == BISHY @9695 /*  Hey, <CHARNAME>, I know magic is very helpful in combat...but can we please get a less whiny mage?  */
-== BXANNN @9696 /* I heard that, orcess! Oh...what do I care. We'll all be dead soon anyway.  */
+== %XAN_BANTER% @9696 /* I heard that, orcess! Oh...what do I care. We'll all be dead soon anyway.  */
 EXIT
 
 CHAIN IF ~InParty("Faldorn")
@@ -629,7 +631,7 @@ InParty("#Ishy")
 Global("IshyFal1","GLOBAL",0)~ THEN BISHY ishyfaldo1
 @9697 /* Why the Shadow Druids instead of the ordinary druids? Surely you can not gain much from conflict from within your own order. */
 DO ~SetGlobal("IshyFal1","GLOBAL",1)~
-== BFALDO @9698 /* Hss! Do not presume to speak to me about matters in which you know nothing. */
+== %FALDORN_BANTER% @9698 /* Hss! Do not presume to speak to me about matters in which you know nothing. */
 = @9699 /* The enemies of nature torture the Mother with their tools of civilization, ripping and tearing away her precious gifts. To not act with violence in turn is to turn your back on her. */
 == BISHY @9700 /* On second thought...i'm not sure I want to have this conversation. */
 EXIT 
@@ -642,7 +644,7 @@ See("Xan")
 Global("IshyXan2","GLOBAL",0)~ THEN BISHY IshyXan2
 @9701 /*  Xan, you want said you were a Greycloak of Evereska, right? Would you mind telling me more about the place? It must have been wonderful.  */
 DO ~SetGlobal("IshyXan2","GLOBAL",1)~
-== BXANNN @9702 /* Not at the moment, i'm sorry. I'm feeling far too depressed, you see, being away from my homeland so long. Talking about it would only make it worse.  */
+== %XAN_BANTER% @9702 /* Not at the moment, i'm sorry. I'm feeling far too depressed, you see, being away from my homeland so long. Talking about it would only make it worse.  */
 == BISHY @9703 /* Well, gee...i'm sorry for bringing it up then. But still Xan, all this constant groaning will get you nowhere. */
 EXIT
 
@@ -652,13 +654,13 @@ See("#Ishy")
 !StateCheck("Dynaheir",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
 Global("IshyRomanceActive","GLOBAL",2)
-Global("IshyDynaR","GLOBAL",0)~ THEN BDYNAH IshyDynaR
+Global("IshyDynaR","GLOBAL",0)~ THEN %DYNAHEIR_BANTER% IshyDynaR
 @9704 /*  Ishlilka, may I speak with thee a moment?  */
 DO ~SetGlobal("IshyDynaR","GLOBAL",1)~
 == BISHY @9705 /* Uh..sure. What's going on, Dynaheir?  */
-== BDYNAH @9706 /*  Art thou...becoming close with <CHARNAME>? Thou talk often, of late. */
+== %DYNAHEIR_BANTER% @9706 /*  Art thou...becoming close with <CHARNAME>? Thou talk often, of late. */
 == BISHY @9707 /*  I don't think that's any of your buisness!  */
-== BDYNAH @9708 /*  There is no need to be defensive, but if that is how thou will be, I will speak of it no more.  */
+== %DYNAHEIR_BANTER% @9708 /*  There is no need to be defensive, but if that is how thou will be, I will speak of it no more.  */
 EXIT
 
 CHAIN
@@ -715,7 +717,7 @@ CHAIN
 IF ~ InParty("#Ishy")
 InParty("rasaad")
 See("#Ishy")
-Global("endofbg1","GLOBAL",1)
+Global("Ishy_ENDOFBG1","GLOBAL",1)
 !StateCheck("rasaad",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
 Global("IshyRas1","GLOBAL",0)~ THEN BISHY IshyRas11
@@ -733,7 +735,7 @@ CHAIN
 IF ~ InParty("#Ishy")
 InParty("rasaad")
 See("#Ishy")
-Global("endofbg1","GLOBAL",1)
+Global("Ishy_ENDOFBG1","GLOBAL",1)
 !StateCheck("rasaad",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
 Global("IshyRas2","GLOBAL",0)~ THEN BISHY IshyRas12
@@ -752,13 +754,13 @@ InParty("Xzar")
 See("#Ishy")
 !StateCheck("Xzar",CD_STATE_NOTVALID)
 !StateCheck("#Ishy",CD_STATE_NOTVALID)
-Global("IshyXzar1","GLOBAL",0)~ THEN BXZAR IshyXzar1
+Global("IshyXzar1","GLOBAL",0)~ THEN %XZAR_BANTER% IshyXzar1
 @9729 /* My dear Ishlilka... */
 DO ~SetGlobal("IshyXzar1","GLOBAL",1)~
 == BISHY @9730 /* I'm not your "dear", but go on. */
-== BXZAR @9731 /* Regardless. My employers would be very interested in someone of your skill. */
+== %XZAR_BANTER% @9731 /* Regardless. My employers would be very interested in someone of your skill. */
 == BISHY @9732 /* I wouldn't be interested in working for anyone who hires someone as crazy as you. Well, <CHARNAME> excluded. Who do you work for, anyway?  */
-== BXZAR @9733 /* Oh, Ishlilka. You are naive yet, but like a juicy plum can be turned to dark if left to ripe over time, yes? */
+== %XZAR_BANTER% @9733 /* Oh, Ishlilka. You are naive yet, but like a juicy plum can be turned to dark if left to ripe over time, yes? */
 == BISHY @9734 /* What are you babbling about? */
 EXIT
 
@@ -779,7 +781,7 @@ EXIT
 
 CHAIN
 IF ~InParty("#Ishy")
-Global("endofbg1","GLOBAL",1)
+Global("Ishy_ENDOFBG1","GLOBAL",1)
 InParty("dorn")
 Global("IshyRomanceActive","GLOBAL",2)
 Global("IshyDornRho","GLOBAL",0)
@@ -813,7 +815,7 @@ InParty("dorn")
 Global("IshyRomanceActive","GLOBAL",2)
 !Global("IshyDornRho","GLOBAL",1)
 Race(Player1,HALFORC)
-Global("endofbg1","GLOBAL",1)~ THEN BDDORNB IshyDorn222
+Global("Ishy_ENDOFBG1","GLOBAL",1)~ THEN BDDORNB IshyDorn222
 @9739 /* I concede that <CHARNAME> is a fine choice. The blood of an orc runs through him. That is enough. */
 DO ~SetGlobal("IshyDornRhosod","GLOBAL",1)~
 = @9740 /* Still, have you ever need of a real man, you know where to find me... */
@@ -967,7 +969,7 @@ EXIT
 
 CHAIN IF ~InParty("#Ishy")
 InParty("Neera")
-Global("endofbg1","GLOBAL",1)
+Global("Ishy_ENDOFBG1","GLOBAL",1)
 Global("neeraishsod","GLOBAL",0)~ THEN BISHY neerasod1
 @9791 /* Wow, a person in your head, huh? Wild magic really is wild sometimes. */ 
 DO ~SetGlobal("neeraishsod","GLOBAL",1)~
@@ -1006,51 +1008,51 @@ EXIT
 
 
 INTERJECT KHALID 3 sayhiish
-  == BISHY IF ~IsValidForPartyDialog("#Ishy")~ THEN
+  == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN
     @9800 /* I think we should bring them along, <CHARNAME>. They seem trustworthy. */
 	END JAHEIR 5
 
 INTERJECT_COPY_TRANS SLAVE 0 ishseeslave
- == BISHY IF ~IsValidForPartyDialog("#Ishy")~ THEN 
+ == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN 
  @9801 /* Oh, you poor thing...<CHARNAME>, what are we going to do? */
  END
  
  INTERJECT_COPY_TRANS SLAVE2 0 ishseeslave2
- == BISHY IF ~IsValidForPartyDialog("#Ishy")~ THEN 
+ == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN 
  @9801 /* Oh, you poor thing...<CHARNAME>, what are we going to do? */
  END
  
  INTERJECT_COPY_TRANS2 SLAVFREE 0 ishseeslave3
- == BISHY IF ~IsValidForPartyDialog("#Ishy")~ THEN 
+ == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN 
  @9802 /* I am so glad we were able to free them, <CHARNAME>. Nobody deserves such horrible treatment. */
  END
  
  INTERJECT_COPY_TRANS2 SAFANA 5 ishsafsure
- == BISHY IF ~IsValidForPartyDialog("#Ishy")
+ == BISHY IF ~IsValidForPartyDialogue("#Ishy")
  Global("IshyRomanceActive","GLOBAL",1)~ THEN 
  @9803 /* Are you...sure about this? I don't...trust her. */
-== BISHY IF ~IsValidForPartyDialog("#Ishy")
+== BISHY IF ~IsValidForPartyDialogue("#Ishy")
  Global("IshyRomanceActive","GLOBAL",1)~ THEN 
  @9804 /* *You notice Ishlilka seems to be walking in between you two as you head off.* */
-   == BISHY IF ~IsValidForPartyDialog("#Ishy")
+   == BISHY IF ~IsValidForPartyDialogue("#Ishy")
  Global("IshyRomanceActive","GLOBAL",2)~ THEN 
  @9803 /* Are you...sure about this? I don't...trust her. */
-== BISHY IF ~IsValidForPartyDialog("#Ishy")
+== BISHY IF ~IsValidForPartyDialogue("#Ishy")
  Global("IshyRomanceActive","GLOBAL",2)~ THEN 
  @9804 /* *You notice Ishlilka seems to be walking in between you two as you head off.* */
 END
 
  INTERJECT_COPY_TRANS2 SAFANA 10 ishsafsure
- == BISHY IF ~IsValidForPartyDialog("#Ishy")
+ == BISHY IF ~IsValidForPartyDialogue("#Ishy")
  Global("IshyRomanceActive","GLOBAL",1)~ THEN 
  @9803 /* Are you...sure about this? I don't...trust her. */
-== BISHY IF ~IsValidForPartyDialog("#Ishy")
+== BISHY IF ~IsValidForPartyDialogue("#Ishy")
  Global("IshyRomanceActive","GLOBAL",1)~ THEN 
  @9804 /* *You notice Ishlilka seems to be walking in between you two as you head off.* */
-  == BISHY IF ~IsValidForPartyDialog("#Ishy")
+  == BISHY IF ~IsValidForPartyDialogue("#Ishy")
  Global("IshyRomanceActive","GLOBAL",2)~ THEN 
  @9803 /* Are you...sure about this? I don't...trust her. */
-== BISHY IF ~IsValidForPartyDialog("#Ishy")
+== BISHY IF ~IsValidForPartyDialogue("#Ishy")
  Global("IshyRomanceActive","GLOBAL",2)~ THEN 
  @9804 /* *You notice Ishlilka seems to be walking in between you two as you head off.* */
 END 
