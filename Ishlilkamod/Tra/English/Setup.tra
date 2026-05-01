@@ -43,15 +43,20 @@ The Spike of Sickness is smaller and lighter than a normal spear, making it inef
 
 STATISTICS:
 
-THAC0: +1
-Damage: 1d6 + 1 poison damage over 2 rounds unless the target saves vs. death
-Speed factor: 2
-Type: One-handed
-Profiency: Spears
-Requires:
-5 Strength
+Combat abilities: 
+- Returns to the wielder's when thrown
+- Poisons the target, inflicting 1 damage per second for 2 seconds (save vs. Death neg.)
 
-Weight: 2~
+THAC0: +1
+Damage: 1d6 +1 (Piercing)
+Speed Factor: 2
+Proficiency: spears
+Type: One-Handed
+
+Requires: 
+- 5 Strength
+
+Weight: 3~
 @538  = ~Blue Colored Blade~
 @539  = ~Sword of the Darkness Flame~
 @540  = ~This blade radiates a minor magical enchantment.~
@@ -62,17 +67,28 @@ This blade, when not held, appears as a simple blade with a blue-tinged hilt. Up
 The Sword of Darkness Flame draws upon both negative energy as well as the element of fire, creating a powerful enchantment. The blade itself is rather ordinary, however, and even sort of dull. Were it not for the powerful magic behind it, the sword would be unremarkable. Whether the blade itself has worn down over time, or whether the strength of the elemental enchantment degraded the quality of the blade, you cannot say.
 
 
-STATISTICS:
+STATISTICS: 
 
+Equipped abilities: 
+- Enchantment: +2 vs. lycanthropes and trolls
+- Enchantment: +3 vs. winter wolves
+- Enchantment: +4 vs. undead
+
+Combat abilities: 
+- Inflicts 1d2 magic damage to the target
+- Inflicts 1d2 fire damage to the target
+
+Enchantment: +3
 THAC0: +2
-Damage: 1d6 + 1-2 magic damage and 1-2 fire damage
-Speed factor: 6
-Type: One-handed
-Profiency: Longsword
-Requires:
-8 Strength
+Damage: 1d6 (Slashing)
+Speed Factor: 4
+Proficiency: Épée longue
+Type: One-Handed
 
-Weight: 6~
+Requires: 
+- 8 Strength
+
+Weight: 4~
 @542  = ~Juleska~
 @543  = ~Falterion~
 @544  = ~"Crusader"~

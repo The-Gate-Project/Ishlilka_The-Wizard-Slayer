@@ -1,28 +1,49 @@
 BACKUP ~Ishlilkamod/backup~
 AUTHOR ~Damian Warneke (WarChiefZeke @ baldurs gate forums or Gibberlings 3)~
+
 README ~Ishlilkamod/Readme/README.%LANGUAGE%.txt~ ~Ishlilkamod/Readme/README.English.txt~
+
+VERSION ~v1.4~
 
 ALWAYS
 
-	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
+ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
 	FAIL @546 END // DLC Merger
 
-	ACTION_DEFINE_ARRAY Ad_reload BEGIN
-	~Setup.tra~
+	//Copies tra files into the autotra-folder (to leave the originals untouched)
+	DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
+		COPY ~Ishlilkamod/Tra/english~				~weidu_external/Ishlilkamod/Tra/autotra/english~
+		COPY ~Ishlilkamod/Tra/%LANGUAGE%~			~weidu_external/Ishlilkamod/Tra/autotra/%LANGUAGE%~
 	END
+
+	LAF autotra_workaround END
+
+
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+
+	ACTION_DEFINE_ARRAY Ad_reload BEGIN ~Setup.tra~ END
 	ACTION_DEFINE_ARRAY Ad_noconvert BEGIN END
+	
 		LAF HANDLE_CHARSETS
 		INT_VAR
 		infer_charset = 1
 		STR_VAR
-		tra_path = EVAL ~%MOD_FOLDER%/Tra~
+		tra_path = EVAL ~weidu_external/Ishlilkamod/Tra/autotra~
+		out_path = EVAL ~weidu_external/Ishlilkamod/Tra/autotra/UTF8~
+		iconv_path = ~Ishlilkamod/Tra/autotra/iconv~
 		noconvert_array = Ad_noconvert
 		reload_array = Ad_reload
 	END
 	
+// UTF8 only
+	COPY ~weidu_external/Ishlilkamod/Tra/autotra/UTF8/%LANGUAGE%~			~weidu_external/Ishlilkamod/Tra/autotra/%LANGUAGE%~
+END
+
 INCLUDE ~Ishlilkamod/Lib/g3_cpmvars_master.tpa~
 
 END
+
+AUTO_TRA ~weidu_external/Ishlilkamod/Tra/autotra/%s~
 
 LANGUAGE ~English~ 
 		 ~english~ 
@@ -134,15 +155,20 @@ The Spike of Sickness is smaller and lighter than a normal spear, making it inef
 
 STATISTICS:
 
-THAC0: +1
-Damage: 1d6 + 1 poison damage over 2 rounds unless the target saves vs. death
-Speed factor: 2
-Type: One-handed
-Profiency: Spears
-Requires:
-5 Strength
+Combat abilities: 
+- Returns to the wielder's when thrown
+- Poisons the target, inflicting 1 damage per second for 2 seconds (save vs. Death neg.)
 
-Weight: 2 */
+THAC0: +1
+Damage: 1d6 +1 (Piercing)
+Speed Factor: 2
+Proficiency: spears
+Type: One-Handed
+
+Requires: 
+- 5 Strength
+
+Weight: 3 */
 
 
 COPY_EXISTING ~fiswrd.itm~ ~override/fiswrd.itm~
@@ -158,17 +184,28 @@ This blade, when not held, appears as a simple blade with a blue-tinged hilt. Up
 The Sword of Darkness Flame draws upon both negative energy as well as the element of fire, creating a powerful enchantment. The blade itself is rather ordinary, however, and even sort of dull. Were it not for the powerful magic behind it, the sword would be unremarkable. Whether the blade itself has worn down over time, or whether the strength of the elemental enchantment degraded the quality of the blade, you cannot say.
 
 
-STATISTICS:
+STATISTICS: 
 
+Equipped abilities: 
+- Enchantment: +2 vs. lycanthropes and trolls
+- Enchantment: +3 vs. winter wolves
+- Enchantment: +4 vs. undead
+
+Combat abilities: 
+- Inflicts 1d2 magic damage to the target
+- Inflicts 1d2 fire damage to the target
+
+Enchantment: +3
 THAC0: +2
-Damage: 1d6 + 1-2 magic damage and 1-2 fire damage
-Speed factor: 6
-Type: One-handed
-Profiency: Longsword
-Requires:
-8 Strength
+Damage: 1d6 (Slashing)
+Speed Factor: 4
+Proficiency: Épée longue
+Type: One-Handed
 
-Weight: 6 */
+Requires: 
+- 8 Strength
+
+Weight: 4 */
 
 //////////////////////////////
 // Quest enemies ////////////
