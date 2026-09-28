@@ -62,6 +62,7 @@ v1.4: Ishlilka mod for BGSoD and EET
 - Correct ishyscrp.baf..... InParty("Myself") to InParty(Myself)
 - Correct Falteri.cre. Missing script name
 - Fix dialog 2da coloumn counts for EET, thanks to GraionDilach
+- Fix I!ishdis sound, thanks to GraionDilach
 - Correct ishyscrp.baf
 - I!QSPR.itm no more a critical item
 - Add DLCmerger check
@@ -69,3 +70,8 @@ v1.4: Ishlilka mod for BGSoD and EET
 - Add metadata and label for Project Infinity
 - New component Deactivate Cutscene For Ishilka first meeting
 - Add a new reply option for the first meeting that allows Ishilka's integration into the group to be delayed once
+- rename tp2
+- replace endofbg1 variable by Ishy_ENDOFBG1
+- Autotra
+- Item descriptions
+- WeiduModPackager

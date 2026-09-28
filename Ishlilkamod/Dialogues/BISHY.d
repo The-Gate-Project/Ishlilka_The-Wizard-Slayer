@@ -1022,12 +1022,12 @@ INTERJECT_COPY_TRANS SLAVE 0 ishseeslave
  @9801 /* Oh, you poor thing...<CHARNAME>, what are we going to do? */
  END
  
- INTERJECT_COPY_TRANS2 SLAVFREE 0 ishseeslave3
+ INTERJECT_COPY_TRANS2 SLAVFREE 0 ishseeslave3 // TODO I_C_T
  == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN 
  @9802 /* I am so glad we were able to free them, <CHARNAME>. Nobody deserves such horrible treatment. */
  END
  
- INTERJECT_COPY_TRANS2 SAFANA 5 ishsafsure
+ INTERJECT_COPY_TRANS2 SAFANA 5 ishsafsure // TODO I_C_T
  == BISHY IF ~IsValidForPartyDialogue("#Ishy")
  Global("IshyRomanceActive","GLOBAL",1)~ THEN 
  @9803 /* Are you...sure about this? I don't...trust her. */
@@ -1042,7 +1042,7 @@ INTERJECT_COPY_TRANS SLAVE 0 ishseeslave
  @9804 /* *You notice Ishlilka seems to be walking in between you two as you head off.* */
 END
 
- INTERJECT_COPY_TRANS2 SAFANA 10 ishsafsure
+ INTERJECT_COPY_TRANS2 SAFANA 10 ishsafsure // TODO I_C_T
  == BISHY IF ~IsValidForPartyDialogue("#Ishy")
  Global("IshyRomanceActive","GLOBAL",1)~ THEN 
  @9803 /* Are you...sure about this? I don't...trust her. */
@@ -1072,53 +1072,53 @@ Dead("RIELTAR")~ THEN
 @9807 /* What?! But they deserved it! Do you have any idea what they've done?! */
 END                                                                                                                                                                                                                                                                                                                                             
 
-INTERJECT_COPY_TRANS2 DUNKIN 4 Ishymarlapprove
+INTERJECT_COPY_TRANS2 DUNKIN 4 Ishymarlapprove // TODO I_C_T
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN 
 @9808 /* You handled that very well, <CHARNAME>. As my father once taught me, those too quick to violence have no right to wield a sword at all. */
 END
 
-INTERJECT_COPY_TRANS2 DENFUCK 2 ishitson1
+INTERJECT_COPY_TRANS2 DENFUCK 2 ishitson1 // TODO I_C_T
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN
 @9809 /* Red Wizards?! This is what i've trained for! Your misuse of power ends here! */
 END 
 
-INTERJECT_COPY_TRANS2 DENFUCK 3 ishitson9
+INTERJECT_COPY_TRANS2 DENFUCK 3 ishitson9 // TODO I_C_T
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN
 @9809 /* Red Wizards?! This is what i've trained for! Your misuse of power ends here! */
 END 
 
 
-INTERJECT_COPY_TRANS2 ZHALIM 0 ishitson2
+INTERJECT_COPY_TRANS2 ZHALIM 0 ishitson2 // TODO I_C_T
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN
 @9810 /* It's over for you, fools! <CHARNAME> can take on any one of you! */
 END 
 
-INTERJECT_COPY_TRANS2 ZHALIM 1 ishitson3
+INTERJECT_COPY_TRANS2 ZHALIM 1 ishitson3 // TODO I_C_T
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN
 @9810 /* It's over for you, fools! <CHARNAME> can take on any one of you! */
 END
 
-INTERJECT_COPY_TRANS2 ZHALIM 2 ishitson4
+INTERJECT_COPY_TRANS2 ZHALIM 2 ishitson4 // TODO I_C_T
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN
 @9810 /* It's over for you, fools! <CHARNAME> can take on any one of you! */
 END
 
-INTERJECT_COPY_TRANS2 MULAHE 2 ishvsmulahey
+INTERJECT_COPY_TRANS2 MULAHE 2 ishvsmulahey // TODO I_C_T
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN
 @9811 /* Your kind are a disgrace to half-orcs everywhere. Prepare yourself! */
 END
 
-INTERJECT_COPY_TRANS2 MULAHE 6 ishvsmulahey2
+INTERJECT_COPY_TRANS2 MULAHE 6 ishvsmulahey2 // TODO I_C_T
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN
 @9812 /* I would expect no less than treachery from you. */
 END
 
-INTERJECT_COPY_TRANS2 FARMBR 15 ishfarmbr
+INTERJECT_COPY_TRANS2 FARMBR 15 ishfarmbr // TODO I_C_T
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN
 @9813 /* That was incredibly kind of you, <CHARNAME>. I should strive to learn from your example. */
 END
 
-INTERJECT_COPY_TRANS2 NOOBER 4 ishjesusfuckingchristshutup
+INTERJECT_COPY_TRANS2 NOOBER 4 ishjesusfuckingchristshutup // TODO I_C_T
 == BISHY IF ~IsValidForPartyDialogue("#Ishy")~ THEN
 @9814 /* I don't want to be rude, but this guy is really getting on my nerves. Can you tell him to go away already? */
 END
@@ -1130,28 +1130,28 @@ INTERJECT DORN 6 ishdornhello
 @9816 /* Ugh. Do not look at me that way. */ 
 END DORN 8
 
-INTERJECT_COPY_TRANS2 MTOWNAZ 0 ishquestask0
+INTERJECT_COPY_TRANS2 MTOWNAZ 0 ishquestask0 // TODO I_C_T
 == BISHY IF ~Global("IshyQuest","GLOBAL",2)
 IsValidForPartyDialogue("#Ishy")~ THEN @9817 /* Excuse me, you haven't seen any gnomes around here, have you? Likely in mages robes? */
 == MTOWNAZ IF ~Global("IshyQuest","GLOBAL",2)
 IsValidForPartyDialogue("#Ishy")~ THEN @9818 /* I ain't seen nothin' like that, i'm afraid. Sorry I can't help such fine heroes! */
 END
 
-INTERJECT_COPY_TRANS2 MTOWNAZ 1 ishquestask1
+INTERJECT_COPY_TRANS2 MTOWNAZ 1 ishquestask1 // TODO I_C_T
 == BISHY IF ~Global("IshyQuest","GLOBAL",2)
 IsValidForPartyDialogue("#Ishy")~ THEN @9817 /* Excuse me, you haven't seen any gnomes around here, have you? Likely in mages robes? */
 == MTOWNAZ IF ~Global("IshyQuest","GLOBAL",2)
 IsValidForPartyDialogue("#Ishy")~ THEN @9819 /* I ain't seen nothin' like that, i'm afraid. */
 END
 
-INTERJECT_COPY_TRANS2 MTOWNAZ 4 ishquestask4
+INTERJECT_COPY_TRANS2 MTOWNAZ 4 ishquestask4 // TODO I_C_T
 == BISHY IF ~Global("IshyQuest","GLOBAL",2)
 IsValidForPartyDialogue("#Ishy")~ THEN @9817 /* Excuse me, you haven't seen any gnomes around here, have you? Likely in mages robes? */
 == MTOWNAZ IF ~Global("IshyQuest","GLOBAL",2)
 IsValidForPartyDialogue("#Ishy")~ THEN @9819 /* I ain't seen nothin' like that, i'm afraid. */
 END
 
-INTERJECT_COPY_TRANS2 MTOWNAZ 7 ishquestask2
+INTERJECT_COPY_TRANS2 MTOWNAZ 7 ishquestask2 // TODO I_C_T
 == BISHY IF ~Global("IshyQuest","GLOBAL",2)
 IsValidForPartyDialogue("#Ishy")~ THEN @9817 /* Excuse me, you haven't seen any gnomes around here, have you? Likely in mages robes? */
 == MTOWNAZ IF ~Global("IshyQuest","GLOBAL",2)

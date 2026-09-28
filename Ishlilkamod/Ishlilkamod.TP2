@@ -1,11 +1,13 @@
-BACKUP ~Ishlilkamod/backup~
+BACKUP ~weidu_external/Ishlilkamod/backup~
 AUTHOR ~Damian Warneke (WarChiefZeke @ baldurs gate forums or Gibberlings 3)~
 
 README ~Ishlilkamod/Readme/README.%LANGUAGE%.txt~ ~Ishlilkamod/Readme/README.English.txt~
 
-VERSION ~v1.4~
+VERSION ~v1.5~
 
 ALWAYS
+
+	ACTION_IF (!VARIABLE_IS_SET Ishlilka_not_so_always) BEGIN // run only once per install
 
 ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
 	FAIL @546 END // DLC Merger
@@ -41,6 +43,9 @@ END
 
 INCLUDE ~Ishlilkamod/Lib/g3_cpmvars_master.tpa~
 
+		OUTER_SET Ishlilka_not_so_always = 1
+	END
+
 END
 
 AUTO_TRA ~weidu_external/Ishlilkamod/Tra/autotra/%s~
@@ -66,12 +71,11 @@ APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
   COPY ~Ishlilkamod/Characters/Falterion.cre~ ~override/Falterion.cre~ 
   COPY ~Ishlilkamod/Characters/fakecrus.cre~ ~override/fakecrus.cre~ 
   COPY ~Ishlilkamod/Characters/fakcrus2.cre~ ~override/fakcrus2.cre~ 
-  COPY ~Ishlilkamod/Scripts/ishquest.baf~ ~override/ishquest.baf~
+/*  COPY ~Ishlilkamod/Scripts/ishquest.baf~ ~override/ishquest.baf~
   COPY ~Ishlilkamod/Scripts/Juleskspells.baf~ ~override/Juleskspells.baf~
   COPY ~Ishlilkamod/Scripts/Falteri.baf~ ~override/Falteri.baf~
-  COPY ~Ishlilkamod/Scripts/ishquest.baf~ ~override/ishquest.baf~
   COPY ~Ishlilkamod/Scripts/ishyscrp.baf~ ~override/ishyscrp.baf~
-  COPY ~Ishlilkamod/Scripts/Faltwar.baf~ ~override/faltwar.baf~ 
+  COPY ~Ishlilkamod/Scripts/Faltwar.baf~ ~override/faltwar.baf~ */
   COPY ~Ishlilkamod/Items/fiswrd.itm~ ~override/fiswrd.itm~ 
   
 COPY ~Ishlilkamod/Characters/#Ishy.cre~ ~override/#Ishy.cre~

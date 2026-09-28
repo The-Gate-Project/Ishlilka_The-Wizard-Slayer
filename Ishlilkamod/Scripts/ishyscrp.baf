@@ -14,7 +14,8 @@ Global("IshyFistHelp","GLOBAL",0)
 Global("Chapter","GLOBAL",7)
 THEN RESPONSE #100
 LeaveParty()
-MoveBetweenAreas("BD0010",[1069.533],7)
+// MoveBetweenAreas("BD0010",[1069.533],7)
+EscapeAreaObjectMove("BD0010",Myself,1069,533,7)
 SetGlobal("IshyFistHelp","GLOBAL",1)
 END
 
@@ -445,8 +446,9 @@ Global("IshyFistHelp","GLOBAL",0)
 Global("Chapter","GLOBAL",7)
 THEN RESPONSE #100
 LeaveParty()
-MoveBetweenAreas("BD0010",[1069.533],7)
 SetGlobal("IshyFistHelp","GLOBAL",1)
+// MoveBetweenAreas("BD0010",[1069.533],7)
+EscapeAreaObjectMove("BD0010",Myself,1069,533,7)
 END
 
 IF
@@ -454,7 +456,8 @@ Global("Chapter","GLOBAL",13)
 Global("IshSkieDeadLeave","GLOBAL",0)
 THEN RESPONSE #100
 LeaveParty()
-DisplayStringHead(Myself,@37) /*I...I don't know what to think...i'm sorry, but I must go.*/
-MoveBetweenAreas("BD0010",[1069.533],7)
 SetGlobal("IshySkieDeadLeave","GLOBAL",1)
+DisplayStringHead(Myself,@37) /*I...I don't know what to think...i'm sorry, but I must go.*/
+// MoveBetweenAreas("BD0010",[1069.533],7)
+EscapeAreaObjectMove("BD0010",Myself,1069,533,7)
 END 
