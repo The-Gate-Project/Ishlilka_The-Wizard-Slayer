@@ -56,6 +56,12 @@ LANGUAGE ~English~
 		 ~Ishlilkamod/Tra/English/Scripts.tra~
 		 ~Ishlilkamod/Tra/English/Dialogues.tra~
 
+LANGUAGE ~schinese~ 
+		 ~schinese~ 
+		 ~Ishlilkamod/Tra/schinese/Setup.tra~
+		 ~Ishlilkamod/Tra/schinese/Scripts.tra~
+		 ~Ishlilkamod/Tra/schinese/Dialogues.tra~
+
 BEGIN @500 /* Ishlilka mod for BGSoD and EET */
 DESIGNATED 500
 LABEL ~WarChiefZeke-Ishlilka~
